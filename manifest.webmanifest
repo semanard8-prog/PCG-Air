@@ -1,0 +1,45 @@
+{
+  "id": "/airlife-pcg/",
+  "name": "AIRLIFE PCG — Flight Reference",
+  "short_name": "AIRLIFE PCG",
+  "description": "HCA Houston Healthcare AIRLIFE Patient Care Guidelines — case-driven protocol, dosing and procedure reference for flight crews. Runs fully offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#080F13",
+  "theme_color": "#0E1F27",
+  "categories": ["medical", "productivity", "utilities"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/icon-192.png",           "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png",           "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png",  "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Guided skills",
+      "short_name": "Skills",
+      "description": "RSI, thoracostomy, IO and cricothyrotomy, stepped and animated",
+      "url": "./index.html#skills",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Doses by problem",
+      "short_name": "Doses",
+      "description": "Pick the problem, get the medications with the numbers filled in",
+      "url": "./index.html#doses",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Drug formulary",
+      "short_name": "Drugs",
+      "description": "Rev 2024.04 formulary, weight-resolved",
+      "url": "./index.html#rx",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
