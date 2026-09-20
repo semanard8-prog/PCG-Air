@@ -82,18 +82,40 @@ a{color:var(--dose);text-decoration:none}
 ::selection{background:var(--doseGlow)}
 :focus-visible{outline:2px solid var(--dose);outline-offset:2px}
 
-/* colour keys */
-.k-1,.k-gen{--k:var(--c-gen)} .k-2,.k-air,.k-airway,.k-resp{--k:var(--c-air)}
-.k-3,.k-card{--k:var(--c-card)} .k-4,.k-med,.k-metab{--k:var(--c-med)}
-.k-5,.k-trauma,.k-hemo{--k:var(--c-trauma)} .k-6,.k-env{--k:var(--c-env)}
-.k-7,.k-proc,.k-vascular,.k-thorax{--k:var(--c-proc)} .k-8,.k-ped,.k-neuro{--k:var(--c-ped)}
-.k-9,.k-O,.k-ob{--k:var(--c-ob)} .k-neo{--k:var(--c-neo)} .k-adult{--k:var(--c-adult)}
-.k-press{--k:var(--c-press)} .k-sed{--k:var(--c-sed)} .k-misc{--k:var(--c-gen)}
-.k-warn{--k:var(--warn)} .k-dose{--k:var(--dose)}
-[class*="k-"]{--k:var(--c-gen)}
+/* colour keys — the wildcard fallback MUST come first: it has the same
+   specificity as the named classes, so if it came last it would win and
+   every accent would paint grey. */
+[class*="k-"]{--k:var(--c-gen);--kf:#5F7A8A24;--kg:#5F7A8A12;--kb:#5F7A8A5c}
 [class*="k-"]{--kf:color-mix(in srgb, var(--k) 14%, transparent);
-              --kg:color-mix(in srgb, var(--k) 6%, transparent);
-              --kb:color-mix(in srgb, var(--k) 34%, transparent)}
+              --kg:color-mix(in srgb, var(--k) 7%, transparent);
+              --kb:color-mix(in srgb, var(--k) 36%, transparent)}
+.k-1,.k-gen{--k:var(--c-gen)}
+.k-2,.k-air,.k-airway,.k-resp{--k:var(--c-air)}
+.k-3,.k-card{--k:var(--c-card)}
+.k-4,.k-med,.k-metab{--k:var(--c-med)}
+.k-5,.k-trauma,.k-hemo{--k:var(--c-trauma)}
+.k-6,.k-env{--k:var(--c-env)}
+.k-7,.k-proc,.k-vascular,.k-thorax{--k:var(--c-proc)}
+.k-8,.k-ped,.k-neuro{--k:var(--c-ped)}
+.k-9,.k-O,.k-ob{--k:var(--c-ob)}
+.k-neo{--k:var(--c-neo)}
+.k-adult{--k:var(--c-adult)}
+.k-press{--k:var(--c-press)}
+.k-sed{--k:var(--c-sed)}
+.k-misc{--k:var(--c-gen)}
+.k-warn{--k:var(--warn)}
+.k-dose{--k:var(--dose)}
+
+/* patient-class badge — the same three colours everywhere they appear */
+.iage{font:700 10px/1 Barlow;letter-spacing:.09em;padding:5px 8px;border-radius:20px;white-space:nowrap;color:#fff}
+.iage.ped{background:var(--c-ped)}
+.iage.adult{background:var(--c-adult)}
+.iage.ob{background:var(--c-ob)}
+.iage.all{background:none;color:var(--dim);border:1.5px solid var(--line2)}
+:root[data-theme="dark"] .iage{color:#08141A}
+.iage.now{box-shadow:0 0 0 3px color-mix(in srgb, currentColor 30%, transparent)}
+.lgrp{margin-top:12px}
+.lglab{font:700 10px/1 Barlow;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
 
 .wrap{max-width:900px;margin:0 auto;padding:0 13px 130px}
 
@@ -530,18 +552,16 @@ tr.hi td:first-child{box-shadow:inset 4px 0 0 var(--dose)}
 .lgi i{width:9px;height:9px;border-radius:50%;background:var(--k);display:block}
 
 
-/* ---------- PWA chrome ---------- */
-.netbadge{position:fixed;left:11px;bottom:calc(11px + env(safe-area-inset-bottom,0px));z-index:200;
-  display:none;align-items:center;gap:7px;padding:9px 13px;border-radius:20px;
-  font:700 11px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;
-  background:var(--warn);color:#fff;box-shadow:var(--shadowUp)}
+.netbadge{position:fixed;left:11px;bottom:calc(11px + env(safe-area-inset-bottom,0px));z-index:200;display:none;
+  align-items:center;gap:7px;padding:9px 13px;border-radius:20px;font:700 11px/1 Barlow;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--warn);color:#fff;box-shadow:var(--shadowUp)}
 .netbadge.on{display:flex}
 .netbadge i{width:7px;height:7px;border-radius:50%;background:#fff;display:block}
 .pwabtn{position:fixed;right:11px;bottom:calc(11px + env(safe-area-inset-bottom,0px));z-index:200;display:none;
   padding:14px 18px;border-radius:24px;font:700 13.5px/1 Barlow;background:var(--dose);color:#fff;box-shadow:var(--shadowUp)}
 .pwabtn.on{display:block}
-.uptoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(15px + env(safe-area-inset-bottom,0px));
-  z-index:210;display:none;padding:13px 17px;border-radius:24px;background:var(--panel);border:1.5px solid var(--line2);
+.uptoast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(15px + env(safe-area-inset-bottom,0px));z-index:210;
+  display:none;padding:13px 17px;border-radius:24px;background:var(--panel);border:1.5px solid var(--line2);
   color:var(--ink);font:600 13.5px/1 Barlow;box-shadow:var(--shadowUp)}
 .uptoast.on{display:block}
 .uptoast b{color:var(--dose);margin-left:8px}
@@ -4580,6 +4600,21 @@ var PEDMAP = {
 var ADLMAP = {};
 Object.keys(PEDMAP).forEach(function(a){ if(!ADLMAP[PEDMAP[a]]) ADLMAP[PEDMAP[a]] = a; });
 
+/* patient class of a guideline — the badge that appears on every card */
+function klassOf(p){
+  if(p.ob || p.s === 'O' || p.s === '9') return {c:'ob', l:'OB'};
+  if(p.ped || p.s === '8') return {c:'ped', l:'PEDS'};
+  if(p.s === '7' || p.s === '1') return {c:'all', l:'ALL AGES'};
+  return {c:'adult', l:'ADULT'};
+}
+function ageBadge(p){
+  var k = klassOf(p), now = '';
+  if(k.c === 'ob' && isOB()) now = ' now';
+  else if(k.c === 'ped' && isPed() && !isOB()) now = ' now';
+  else if(k.c === 'adult' && hasPt() && !isPed() && !isOB()) now = ' now';
+  return '<span class="iage ' + k.c + now + '">' + k.l + '</span>';
+}
+
 /* section → colour key */
 function keyOf(p){ return 'k-' + (p.ob ? 'ob' : p.s); }
 
@@ -5077,7 +5112,8 @@ function itemHTML(p, sub){
   else if(p.rev) flag = '<span class="iflag rev">REV ' + p.rev + '</span>';
   else if(p.flags && p.flags.length) flag = '<span class="iflag">' + p.flags.length + ' FLAG' + (p.flags.length>1?'S':'') + '</span>';
   return '<a class="item ' + keyOf(p) + '" href="#p/' + p.id + '">' +
-    '<div class="itop"><span class="inum">' + p.id + '</span><span class="ittl">' + esc(p.t) + '</span>' + flag + '</div>' +
+    '<div class="itop"><span class="inum">' + p.id + '</span><span class="ittl">' + esc(p.t) + '</span>' +
+    ageBadge(p) + flag + '</div>' +
     (sub ? '<div class="isub">' + esc(sub) + '</div>' : '') + '</a>';
 }
 
@@ -5359,7 +5395,7 @@ function caseHTML(){
   var top = ranked[0].p, K = keyOf(top), nrx = top.b.filter(function(b){ return b[0] === 'rx'; }).length;
   h.push('<div class="cgrp"><div class="cglab ' + K + '">Start here</div>');
   h.push('<div class="primary ' + K + '">');
-  h.push('<div class="ph1"><span class="pn">' + top.id + '</span><h2>' + esc(top.t) +
+  h.push('<div class="ph1"><span class="pn">' + top.id + '</span><h2>' + esc(top.t) + ' ' + ageBadge(top) +
     '<span class="sub">' + esc(SEC[top.s].t) + (top.rev ? ' · Rev ' + top.rev : '') + ' · source p.' + top.pg +
     (nrx ? ' · ' + nrx + ' medication' + (nrx > 1 ? 's' : '') : '') + '</span></h2></div>');
   h.push(miniRx(top, 4));
@@ -5472,11 +5508,30 @@ function viewHome(){
 }
 
 function legend(){
-  var L = [['1','General'],['2','Airway'],['3','Cardiac'],['4','Medical'],['5','Trauma'],
-           ['6','Environmental'],['7','Procedures'],['8','Pediatrics'],['ob','Obstetrics']];
-  return '<div class="cgrp"><div class="cglab">Colour key</div><div class="legend">' +
-    L.map(function(x){ return '<span class="lgi k-' + x[0] + '"><i></i>' + x[1] + '</span>'; }).join('') +
-    '</div></div>';
+  var cls = [['adult','ADULT','guidelines written for the adult patient'],
+             ['ped','PEDS','pediatric guideline — surfaces automatically under 15'],
+             ['ob','OB','obstetric and neonatal'],
+             ['all','ALL AGES','procedures and general policy, no age split']];
+  var secs = [['1','General'],['2','Airway'],['3','Cardiac'],['4','Medical'],['5','Trauma'],
+              ['6','Environmental'],['7','Procedures'],['8','Pediatrics'],['9','OB / Neonatal'],['O','Obstetrics 24.04']];
+  var h = ['<div class="cgrp"><div class="cglab">Colour key</div>'];
+  h.push('<div class="lgrp"><div class="lglab">Patient class — shown on every guideline card</div><div class="legend">');
+  cls.forEach(function(c){
+    h.push('<span class="lgi" style="border:none;background:none;padding:0;margin-right:10px">' +
+      '<span class="iage ' + c[0] + '">' + c[1] + '</span>' +
+      '<span style="font:500 11.5px/1.3 Barlow;color:var(--dim)">' + esc(c[2]) + '</span></span>');
+  });
+  h.push('</div></div>');
+  h.push('<div class="lgrp"><div class="lglab">Section</div><div class="legend">');
+  secs.forEach(function(x){ h.push('<span class="lgi k-' + x[0] + '"><i></i>' + esc(x[1]) + '</span>'); });
+  h.push('</div></div>');
+  h.push('<div class="lgrp"><div class="lglab">Meaning</div><div class="legend">');
+  h.push('<span class="lgi k-dose"><i></i>Calculated dose</span>');
+  h.push('<span class="lgi k-warn"><i></i>Advisory or ceiling applied</span>');
+  h.push('<span class="lgi" style="--k:var(--crit)"><i></i>Contraindication</span>');
+  h.push('<span class="lgi" style="--k:var(--ok)"><i></i>Settled by Rev 2024.04</span>');
+  h.push('</div></div></div>');
+  return h.join('');
 }
 
 function viewSection(n){
@@ -5500,6 +5555,10 @@ function viewProtocol(id){
   var K = keyOf(p);
   var h = ['<a class="back" href="#s/' + p.s + '">‹ ' + esc(SEC[p.s].t) + '</a>'];
   h.push('<div class="phead ' + K + '"><span class="pn">' + p.id + '</span><h1>' + esc(p.t) + '</h1></div>');
+  h.push('<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:9px">' + ageBadge(p) +
+    '<span class="iage all" style="color:var(--k);border-color:var(--kb);background:var(--kf)">' +
+    esc(SEC[p.s].t.toUpperCase()) + '</span>' +
+    (p.rev ? '<span class="iage all">REV ' + p.rev + '</span>' : '') + '</div>');
 
   var meta = [SEC[p.s].t, 'source p.' + p.pg];
   if(p.rev) meta.push('Rev ' + p.rev);
@@ -6120,13 +6179,10 @@ document.addEventListener('keydown', function(e){
 
 render();
 
-/* ================= PWA runtime ================= */
 (function(){
   var net = document.getElementById('netbadge');
   function paintNet(){ net.classList.toggle('on', !navigator.onLine); }
-  window.addEventListener('online', paintNet);
-  window.addEventListener('offline', paintNet);
-  paintNet();
+  window.addEventListener('online', paintNet); window.addEventListener('offline', paintNet); paintNet();
   var deferred = null, btn = document.getElementById('pwabtn');
   window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; btn.classList.add('on'); });
   btn.addEventListener('click', function(){ btn.classList.remove('on'); if(deferred){ deferred.prompt(); deferred = null; } });
