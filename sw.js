@@ -5,7 +5,7 @@
    Bump CACHE on every deploy so phones pick the new build up.
    ============================================================ */
 
-var CACHE = 'airlife-pcg-v2';
+var CACHE = 'airlife-pcg-v3';
 var FONTS = 'airlife-fonts-v1';
 
 var SHELL = [
