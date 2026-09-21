@@ -172,7 +172,7 @@ a{color:var(--dose);text-decoration:none}
 #nav a b{display:block;font:700 17px/1 Barlow;margin-bottom:2px;opacity:.6}
 #nav a[aria-current=page]{color:var(--k);border-bottom-color:var(--k)}
 #nav a[aria-current=page] b{opacity:1}
-#nav a.n-find{--k:var(--dose)} #nav a.n-skills{--k:var(--c-proc)} #nav a.n-doses{--k:var(--c-sed)}
+#nav a.n-find{--k:var(--dose)} #nav a.n-ift{--k:var(--c-air)} #nav a.n-skills{--k:var(--c-proc)} #nav a.n-doses{--k:var(--c-sed)}
 #nav a.n-calc{--k:var(--dose)} #nav a.n-rx{--k:var(--c-med)} #nav a.n-mcs{--k:var(--c-card)}
 #nav a.n-ai{--k:var(--c-sed)} #nav a.n-flags{--k:var(--warn)}
 
@@ -734,6 +734,49 @@ body{
 .coderef{margin-top:10px;border:1.5px solid var(--line);border-radius:11px;overflow:hidden}.coderef summary{padding:11px 12px;font:700 12.5px/1 Barlow;background:var(--panel2);color:var(--ink2)}.coderef .inside{padding:10px 12px}.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}.hgrid span{font:500 12px/1.4 Barlow;color:var(--ink2)}
 @media(max-width:760px){.codecontrols{grid-template-columns:1fr}.codeselects{grid-template-columns:1fr 1fr}.timebig{font-size:44px}.codelaunch{align-items:flex-start;flex-wrap:wrap}.codelaunch a{width:100%;text-align:center}} 
 
+
+/* ================= v8 target-aware respiratory / ABG deck ================= */
+.normtag{font:700 11px/1 Barlow;padding:6px 9px;border-radius:20px;border:1.5px solid color-mix(in srgb,var(--c-air) 35%,var(--line));background:color-mix(in srgb,var(--c-air) 8%,var(--panel));color:var(--c-air);white-space:nowrap}
+.targetdeck{margin:10px 0;border:1.5px solid color-mix(in srgb,var(--dose) 38%,var(--line));border-radius:13px;background:linear-gradient(135deg,color-mix(in srgb,var(--dose) 9%,var(--panel)),color-mix(in srgb,var(--c-air) 6%,var(--panel)));padding:12px 13px;box-shadow:var(--shadow)}
+.targethead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.targethead b{font:800 11px/1 Barlow;letter-spacing:.12em;text-transform:uppercase;color:var(--dose)}.targethead span{font:600 11px/1.3 Barlow;color:var(--dim)}
+.targetgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:7px;margin-top:9px}.targetchip{border:1.5px solid var(--line);border-left:4px solid var(--k,var(--dose));border-radius:0 10px 10px 0;background:var(--panel);padding:9px 10px}.targetchip small{display:block;font:800 9px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}.targetchip strong{display:block;margin-top:5px;font:800 16px/1.2 "Barlow Condensed";color:var(--ink)}.targetchip em{display:block;margin-top:3px;font:500 10.5px/1.3 Barlow;color:var(--dim);font-style:normal}
+.targetmeds{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}.targetmed{border:1px solid color-mix(in srgb,var(--dose) 38%,var(--line));background:var(--doseBg);color:var(--dose);border-radius:20px;padding:7px 10px;font:700 11px/1 Barlow}.prioritybadge{display:inline-flex;align-items:center;gap:5px;margin-left:7px;border-radius:20px;padding:5px 8px;background:var(--doseBg);border:1px solid color-mix(in srgb,var(--dose) 40%,transparent);color:var(--dose);font:800 9px/1 Barlow;letter-spacing:.08em;text-transform:uppercase}
+.venthero{margin-top:14px;border-radius:16px;padding:16px;background:linear-gradient(125deg,#0A3041,#0C5962 56%,#40517F);color:#fff;box-shadow:0 20px 44px -30px #061d29}.venthero .ey{font:800 9px/1 Barlow;letter-spacing:.14em;text-transform:uppercase;color:#A8ECF4}.venthero h2{font-size:27px;margin-top:5px}.venthero p{margin:6px 0 0;font:500 12.5px/1.45 Barlow;color:#D8F1F4;max-width:720px}
+.ventlayout{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.ventpanel{border:1.5px solid var(--line);border-radius:13px;background:var(--panel);padding:13px;box-shadow:var(--shadow)}.ventpanel.full{grid-column:1/-1}.ventpanel h3{font-size:17px}.ventpanel .subline{margin-top:4px;font:500 11.5px/1.4 Barlow;color:var(--dim)}
+.ventfields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}.ventfields.two{grid-template-columns:repeat(2,minmax(0,1fr))}.ventfields .cf span:first-child{font-size:9.5px}.ventfields .cf input,.ventfields .cf select{min-height:44px;padding:10px}
+.settinggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px;margin-top:9px}.setting{border:1.5px solid color-mix(in srgb,var(--c-air) 32%,var(--line));border-radius:10px;padding:10px;background:color-mix(in srgb,var(--c-air) 6%,var(--panel))}.setting small{display:block;font:800 9px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}.setting b{display:block;margin-top:5px;font:800 20px/1 "Barlow Condensed";color:var(--c-air)}.setting span{display:block;margin-top:4px;font:500 10.5px/1.3 Barlow;color:var(--dim)}
+.abgstatus{display:flex;gap:8px;align-items:flex-start;margin-top:9px;padding:11px;border-radius:11px;border:1.5px solid var(--line);background:var(--panel2)}.abgstatus .abgicon{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--c-air);color:#fff;font-weight:800;flex:0 0 auto}.abgstatus b{display:block;font:800 15px/1.2 Barlow}.abgstatus span{display:block;margin-top:4px;font:500 11.5px/1.4 Barlow;color:var(--dim)}
+.actionstack{display:grid;gap:7px;margin-top:9px}.actioncard{border:1.5px solid var(--line);border-left:4px solid var(--k,var(--dose));border-radius:0 11px 11px 0;background:var(--panel);padding:10px 11px}.actioncard .atype{font:800 9px/1 Barlow;letter-spacing:.11em;text-transform:uppercase;color:var(--k,var(--dose))}.actioncard b{display:block;margin-top:5px;font:700 13.5px/1.35 Barlow}.actioncard span{display:block;margin-top:4px;font:500 11px/1.4 Barlow;color:var(--dim)}
+.olmdbrief{width:100%;min-height:138px;margin-top:9px;border:1.5px solid var(--line2);border-radius:10px;background:var(--panel2);color:var(--ink);padding:11px;font:500 12px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.olmdrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.sourceflag{display:inline-flex;align-items:center;border-radius:20px;padding:5px 8px;background:var(--panel2);border:1px solid var(--line2);font:700 9px/1 Barlow;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:760px){.ventlayout{grid-template-columns:1fr}.ventpanel.full{grid-column:auto}.ventfields{grid-template-columns:repeat(2,minmax(0,1fr))}.targetgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:470px){.ventfields,.ventfields.two{grid-template-columns:1fr}.targetgrid{grid-template-columns:1fr}}
+
+
+/* ================= v9 interfacility preflight ================= */
+.ifthero{margin-top:14px;border-radius:16px;padding:16px;background:linear-gradient(125deg,#092C3C,#0B6070 54%,#564D91);color:#fff;box-shadow:0 20px 44px -30px #061d29}
+.ifthero .ey{font:800 9px/1 Barlow;letter-spacing:.15em;text-transform:uppercase;color:#A8ECF4}.ifthero h1{font-size:28px;margin-top:5px}.ifthero p{margin:6px 0 0;font:500 12.5px/1.45 Barlow;color:#D9F2F5;max-width:820px}
+.iftbar{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.iftbar .cbtn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:#fff;box-shadow:none}.iftbar .cbtn.go{background:#fff;color:#0B485A;border-color:#fff}.iftbar .saved{align-self:center;font:700 9.5px/1 Barlow;letter-spacing:.08em;text-transform:uppercase;color:#BFEAEF;padding:0 4px}
+.iftlayout{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.iftpanel{border:1.5px solid var(--line);border-radius:13px;background:rgba(255,255,255,.92);padding:13px;box-shadow:var(--shadow);min-width:0}.iftpanel.full{grid-column:1/-1}.iftpanel h2{font-size:18px}.iftpanel .subline{margin-top:4px;font:500 11.5px/1.4 Barlow;color:var(--dim)}
+.iftfields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:10px}.iftfields.three{grid-template-columns:repeat(3,minmax(0,1fr))}.iftfields.two{grid-template-columns:repeat(2,minmax(0,1fr))}.iftfields .cf input,.iftfields .cf select,.iftfields textarea{min-height:42px;padding:9px 10px}.iftfields textarea{width:100%;border:1.5px solid var(--line2);border-radius:9px;background:var(--panel);color:var(--ink);font:500 13px/1.4 Barlow;resize:vertical}
+.iftsectionhead{display:flex;align-items:center;gap:10px}.iftsectionhead>div{flex:1}.iftsectionhead .cbtn{min-height:37px;padding:9px 12px}
+.iftmed{border:1.5px solid var(--line);border-left:4px solid var(--c-med);border-radius:0 11px 11px 0;background:var(--panel);padding:10px;margin-top:8px}.iftmedtop{display:grid;grid-template-columns:minmax(170px,1.55fr) minmax(80px,.55fr) minmax(120px,.85fr) auto;gap:6px;align-items:end}.iftmedtop label span,.iftmix label span{display:block;font:800 8.5px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 4px 2px}.iftmedtop input,.iftmedtop select,.iftmix input,.iftmix select{width:100%;min-height:39px;border:1.5px solid var(--line2);border-radius:8px;background:var(--panel2);padding:8px 9px;font:600 12.5px/1.2 Barlow;color:var(--ink)}.iftremove{width:38px;height:39px;border:1.5px solid var(--line2);border-radius:8px;color:var(--crit);font-size:18px;background:var(--critBg)}
+.iftref{margin-top:7px;padding:8px 9px;border-radius:8px;background:linear-gradient(110deg,var(--doseBg),var(--panel2));border:1px solid color-mix(in srgb,var(--dose) 30%,var(--line));font:500 11px/1.42 Barlow;color:var(--ink2)}.iftref b{color:var(--dose)}.iftref .refrow{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:4px}.iftref .refrow strong{font:700 12px/1.3 Barlow;color:var(--ink)}.iftref .refrow em{font-style:normal;color:var(--dim)}
+.iftmix{display:grid;grid-template-columns:1fr .8fr 1fr .8fr 1.4fr;gap:6px;margin-top:7px;padding-top:7px;border-top:1px dashed var(--line2)}
+.iftstart{display:flex;gap:6px;overflow-x:auto;margin-top:8px;padding-bottom:2px;scrollbar-width:none}.iftstart::-webkit-scrollbar{display:none}.iftstart .setting{flex:0 0 128px;padding:8px}.iftstart .setting b{font-size:16px}
+.supporttiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:9px}.supporttile{border:1.5px solid var(--line2);border-radius:10px;background:var(--panel2);padding:10px;text-align:left;min-height:67px}.supporttile b{display:block;font:700 13px/1.2 Barlow}.supporttile span{display:block;margin-top:4px;font:500 10.5px/1.3 Barlow;color:var(--dim)}.supporttile.on{border-color:var(--c-air);background:color-mix(in srgb,var(--c-air) 8%,var(--panel));box-shadow:0 0 0 2px color-mix(in srgb,var(--c-air) 8%,transparent)}.supporttile.on b{color:var(--c-air)}
+.supportdetail{margin-top:8px;border:1.5px solid color-mix(in srgb,var(--c-air) 30%,var(--line));border-radius:10px;padding:10px;background:color-mix(in srgb,var(--c-air) 5%,var(--panel))}.supportdetail h3{font-size:14px;color:var(--c-air)}
+.iftbodywrap{display:grid;grid-template-columns:minmax(280px,.85fr) 1.15fr;gap:10px;margin-top:9px}.iftbody{width:100%;height:auto;border:1.5px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--panel2));padding:5px}.iftsite{cursor:pointer;outline:none}.iftsite .shape{fill:var(--panel);stroke:var(--line3);stroke-width:2;transition:.14s}.iftsite .txt{fill:var(--dim);font:700 10px Barlow;text-anchor:middle;pointer-events:none}.iftsite.on .shape{fill:color-mix(in srgb,var(--c-trauma) 22%,var(--panel));stroke:var(--c-trauma);stroke-width:3}.iftsite.on .txt{fill:var(--c-trauma)}.iftsite:focus-visible .shape{stroke:var(--dose);stroke-width:4}.skinsites{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.skinsite{font:700 10px/1 Barlow;color:var(--c-trauma);background:color-mix(in srgb,var(--c-trauma) 8%,var(--panel));border:1px solid color-mix(in srgb,var(--c-trauma) 30%,var(--line));border-radius:20px;padding:6px 8px}
+.iftpreview{width:100%;min-height:240px;margin-top:9px;border:1.5px solid var(--line2);border-radius:10px;background:#0D1920;color:#EAF4F6;padding:12px;font:500 11.5px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.iftprivacy{margin-top:8px;font:500 10.5px/1.4 Barlow;color:var(--dim)}.iftprivacy b{color:var(--ink2)}
+@media(max-width:900px){.iftfields{grid-template-columns:repeat(2,minmax(0,1fr))}.supporttiles{grid-template-columns:repeat(2,minmax(0,1fr))}.iftbodywrap{grid-template-columns:1fr}}
+@media(max-width:720px){.iftlayout{grid-template-columns:1fr}.iftpanel.full{grid-column:auto}.iftmedtop{grid-template-columns:1fr 90px 1fr auto}.iftmix{grid-template-columns:1fr 1fr}.iftmix label:last-child{grid-column:1/-1}}
+@media(max-width:480px){.iftfields,.iftfields.three,.iftfields.two{grid-template-columns:1fr}.iftmedtop{grid-template-columns:1fr 1fr}.iftmedtop label:first-child{grid-column:1/-1}.iftremove{grid-column:2}.supporttiles{grid-template-columns:1fr 1fr}}
+
+
+/* ================= v10 quick-find persistence + IFT respiratory review ================= */
+.qfgrid select.haspick{border-color:var(--dose);background:linear-gradient(180deg,var(--panel),color-mix(in srgb,var(--dose) 7%,var(--panel)));box-shadow:0 0 0 2px color-mix(in srgb,var(--dose) 10%,transparent)}
+.qfgrid optgroup{font-weight:700;color:var(--ink)}
+.iftrespgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:9px;margin-top:10px}.iftrespbox{border:1.5px solid var(--line);border-radius:11px;padding:10px;background:var(--panel2);min-width:0}.iftrespbox h3{font-size:14px;color:var(--ink);margin:0}.iftrespbox .subline{margin-top:3px}.iftventreview{margin-top:9px;border:1.5px solid color-mix(in srgb,var(--c-air) 36%,var(--line));border-radius:11px;padding:10px;background:linear-gradient(120deg,color-mix(in srgb,var(--c-air) 6%,var(--panel)),var(--panel))}.iftventreview .reviewhead{display:flex;gap:8px;align-items:flex-start}.iftventreview .reviewbadge{flex:0 0 auto;border-radius:20px;padding:5px 7px;background:var(--c-air);color:#fff;font:800 8.5px/1 Barlow;letter-spacing:.08em;text-transform:uppercase}.iftventreview .reviewhead b{display:block;font:800 14px/1.25 Barlow}.iftventreview .reviewhead span{display:block;margin-top:3px;font:500 10.8px/1.35 Barlow;color:var(--dim)}.iftventreview .actionstack{margin-top:7px}.iftventreview .actioncard{padding:8px 9px}.iftventreview .actioncard b{font-size:12px}.iftventreview .actioncard span{font-size:10.5px}.iftlaunch{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:9px}.iftlaunch .cbtn{min-height:40px;padding:10px 12px}.iftlaunch small{font:500 10.5px/1.35 Barlow;color:var(--dim);flex:1 1 220px}
+@media(max-width:760px){.iftrespgrid{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -741,7 +784,7 @@ body{
 <div id="top">
 <div class="brandbar"><div class="brandin">
   <div class="brandmark" aria-hidden="true">A</div>
-  <div class="brandtxt"><b>AIRLIFE PCG</b><span>Clinical Flight Deck · v7</span></div>
+  <div class="brandtxt"><b>AIRLIFE PCG</b><span>Clinical Flight Deck · v10</span></div>
   <div class="flightstatus" id="flightstatus"><i></i><span id="flightstatustxt">Offline ready</span></div>
 </div></div>
 <header id="pt">
@@ -789,6 +832,7 @@ body{
 
 <nav id="nav"><div class="nvin">
   <a class="n-find"   href="#"       data-r="find"><b>⌖</b>Case</a>
+  <a class="n-ift"    href="#ift"    data-r="ift"><b>⇄</b>Dispatch</a>
   <a class="n-skills" href="#skills" data-r="skills"><b>⚕</b>Skills</a>
   <a class="n-doses"  href="#doses"  data-r="doses"><b>≡</b>Doses</a>
   <a class="n-calc"   href="#calc"   data-r="calc"><b>∑</b>Calc</a>
@@ -4028,7 +4072,8 @@ var CS = {
   conc:{drug:'', amt:'', amtU:'mg', c:'', cU:'mg/mL', vol:''},
   inf:{drug:'', rate:'', rateU:'mcg/kg/min', amt:'', amtU:'mg', vol:'250', volU:'mL'},
   drip:{vol:'', min:'', set:'10'},
-  vitals:{sbp:'', dbp:'', hr:''}
+  vitals:{sbp:'', dbp:'', hr:'', rr:'', spo2:'', etco2:''},
+  vent:{profile:'auto', mode:'A/C', rr:'', vt:'', peep:'', fio2:'100', pip:'', pplat:'', ie:'', ph:'', paco2:'', hco3:'', pao2:'', be:'', lactate:''}
 };
 
 /* ---------- Rule of Nines, age-scaled ---------- */
@@ -4405,8 +4450,11 @@ function viewQuick(){
   h.push('<label class="cf"><span>Systolic</span><input type="number" inputmode="decimal" data-cs="vitals.sbp" value="' + esc(V.sbp) + '" placeholder="mmHg"></label>');
   h.push('<label class="cf"><span>Diastolic</span><input type="number" inputmode="decimal" data-cs="vitals.dbp" value="' + esc(V.dbp) + '" placeholder="mmHg"></label>');
   h.push('<label class="cf"><span>Heart rate</span><input type="number" inputmode="decimal" data-cs="vitals.hr" value="' + esc(V.hr) + '" placeholder="bpm"></label>');
+  h.push('<label class="cf"><span>Resp. rate</span><input type="number" inputmode="decimal" data-cs="vitals.rr" value="' + esc(V.rr) + '" placeholder="/min"></label>');
+  h.push('<label class="cf"><span>SpO₂</span><input type="number" inputmode="decimal" data-cs="vitals.spo2" value="' + esc(V.spo2) + '" placeholder="%"></label>');
+  h.push('<label class="cf"><span>ETCO₂</span><input type="number" inputmode="decimal" data-cs="vitals.etco2" value="' + esc(V.etco2) + '" placeholder="mmHg"></label>');
   h.push('</div>');
-  var sb = parseFloat(V.sbp), db = parseFloat(V.dbp), hr = parseFloat(V.hr), out = [];
+  var sb = parseFloat(V.sbp), db = parseFloat(V.dbp), hr = parseFloat(V.hr), rr = parseFloat(V.rr), spo2=parseFloat(V.spo2), etco2=parseFloat(V.etco2), out = [];
   if(isFinite(sb) && isFinite(db)){
     var map = (sb + 2*db)/3;
     out.push(['MAP', fmt(map,'') + ' mmHg', map < 65 ? 'below the usual 65 mmHg perfusion target' : 'pulse pressure ' + fmt(sb-db,'') + ' mmHg']);
@@ -4419,6 +4467,11 @@ function viewQuick(){
     var floor = sbpMin();
     out.push(['Against age floor', sb + ' vs ' + floor, sb < floor ? 'HYPOTENSIVE for age' : fmt(sb - floor,'') + ' mmHg above the floor']);
   }
+  var nv2 = normalVitals();
+  if(isFinite(hr) && nv2) out.push(['HR vs reference', fmt(hr,'') + ' bpm', 'Reference for age: ' + nv2.hr + ' bpm']);
+  if(isFinite(rr) && nv2) out.push(['RR vs reference', fmt(rr,'') + ' /min', 'Reference for age: ' + nv2.rr + ' /min']);
+  if(isFinite(spo2)) out.push(['SpO₂', fmt(spo2,'') + '%', spo2 < 90 ? 'marked hypoxemia — reassess patient, airway and oxygen delivery' : (spo2 < 93 ? 'below common AIRLIFE protocol oxygenation target' : 'at/above 93%')]);
+  if(isFinite(etco2)) out.push(['ETCO₂', fmt(etco2,'') + ' mmHg', (etco2 < 35 || etco2 > 45) ? 'outside 35–45 mmHg adult airway reference; interpret in clinical context' : 'within 35–45 mmHg adult airway reference']);
   if(out.length){
     h.push('<div class="tw"><table><tbody>');
     out.forEach(function(r){ h.push('<tr><td>' + r[0] + '</td><td><b style="color:var(--dose)">' + r[1] + '</b></td><td>' + r[2] + '</td></tr>'); });
@@ -4427,11 +4480,124 @@ function viewQuick(){
   return h.join('');
 }
 
+
+/* ---------- Ventilator + ABG decision-support deck ---------- */
+function vnum(x){ var n=parseFloat(x); return isFinite(n) ? n : null; }
+function ventProfile(){
+  var V=CS.vent, p=V.profile;
+  if(p==='auto') p=isPed()?'peds':'lp';
+  return p;
+}
+function ventStart(){
+  var p=ventProfile(), w=kg(), a=ageY(), b=pbw(), o={profile:p,src:''};
+  if(p==='peds'){
+    o.src='Pediatric PCG 24.04 · Mechanical Ventilation pp.94–95';
+    if(w!=null && w<=5) Object.assign(o,{mode:'PSIMV+ or APVSIMV',rr:'20–40 /min',vt:'5 mL/kg; titrate max 8',pip:'18–22 cmH₂O',peep:'5 cmH₂O',ie:'Ti 0.3–0.4 s',fio2:'Titrate to oxygenation'});
+    else if(w!=null && w<=10) Object.assign(o,{mode:'PSIMV+ or APVSIMV',rr:'20–30 /min',vt:'6–8 mL/kg',pip:'18–25 cmH₂O',peep:'5 cmH₂O',ie:'Ti 0.4–0.6 s',fio2:'Titrate to oxygenation'});
+    else Object.assign(o,{mode:'APVSIMV',rr:'10–20 /min by age',vt:'6–8 mL/kg',pip:'Do not exceed 35 cmH₂O',peep:'5 cmH₂O',ie:'Ti 0.6–1.0 s; I:E ≥1:3',fio2:'Titrate to oxygenation'});
+    if(w!=null){ var lo=(p==='peds'&&w<=5)?5*w:6*w, hi=8*w; o.vtml=fmt(lo,'mL')+'–'+fmt(hi,'mL')+' mL using entered weight'; }
+    return o;
+  }
+  o.src='Adult PCG Rev 2024.04 · Ventilator Management reference / procedure';
+  if(p==='old') Object.assign(o,{mode:'(S)CMV+ / PCV+ / PSIMV+',rr:'10–12 /min adult',vt:'4–6 mL/kg IBW',pip:'~20 cmH₂O starting PIP',peep:'3–6 cmH₂O',ie:'≥1:4; severe bronchospasm may need 1:6+',fio2:'Start 100%, titrate when appropriate'});
+  else Object.assign(o,{mode:'(S)CMV+ / PCV+ / PSIMV+',rr:'10–12 /min adult',vt:'4–8 mL/kg IBW',pip:'~20 cmH₂O starting PIP',peep:'5–6 cmH₂O',ie:p==='edema'?'1:1 to 1:1.5':'1:2 to 1:3',fio2:'Start 100%, titrate down if SpO₂ >93% and appropriate'});
+  if(b){ var vlo=p==='old'?4:4, vhi=p==='old'?6:8; o.vtml=fmt(b.f*vlo,'mL')+'–'+fmt(b.m*vhi,'mL')+' mL across female–male PBW range'; }
+  o.plat='pPlat <30 cmH₂O';
+  return o;
+}
+function abgRead(){
+  var V=CS.vent, ph=vnum(V.ph), co=vnum(V.paco2), hc=vnum(V.hco3), po=vnum(V.pao2), fio=vnum(V.fio2), out={title:'Enter pH + PaCO₂ + HCO₃⁻',detail:'The offline analyzer uses standard compensation equations and does not require AI.',flags:[],pf:null};
+  if(fio!=null && fio>1) fio=fio/100;
+  if(po!=null && fio!=null && fio>0) out.pf=po/fio;
+  if(ph==null || co==null || hc==null) return out;
+  var acid=ph<7.35, alk=ph>7.45, coAcid=co>45, coAlk=co<35, hAcid=hc<22, hAlk=hc>26;
+  if(acid){
+    if(coAcid && hAcid){ out.title='Mixed respiratory + metabolic acidosis'; out.detail='Both PaCO₂ and HCO₃⁻ move in the acidifying direction.'; }
+    else if(hAcid){ out.title='Primary metabolic acidosis'; var exp=1.5*hc+8; out.detail='Winter expected PaCO₂ ≈ '+fmt(exp,'')+' ±2 mmHg.'; if(co>exp+2) out.flags.push('PaCO₂ is above Winter compensation → additional respiratory acidosis.'); if(co<exp-2) out.flags.push('PaCO₂ is below Winter compensation → additional respiratory alkalosis.'); }
+    else if(coAcid){ out.title='Primary respiratory acidosis'; var da=(co-40)/10, acute=24+Math.max(0,da), chronic=24+Math.max(0,da)*3.5; out.detail='Expected HCO₃⁻ ≈ '+fmt(acute,'')+' acute or '+fmt(chronic,'')+' chronic; compare with measured '+fmt(hc,'')+'.'; }
+    else { out.title='Acidemia with atypical pattern'; out.detail='Recheck sample/units and assess for mixed disorder.'; }
+  } else if(alk){
+    if(coAlk && hAlk){ out.title='Mixed respiratory + metabolic alkalosis'; out.detail='Both PaCO₂ and HCO₃⁻ move in the alkalinizing direction.'; }
+    else if(hAlk){ out.title='Primary metabolic alkalosis'; var exp2=40+0.7*(hc-24); out.detail='Expected PaCO₂ ≈ '+fmt(exp2,'')+' ±5 mmHg.'; }
+    else if(coAlk){ out.title='Primary respiratory alkalosis'; var dd=(40-co)/10, ac=24-Math.max(0,dd)*2, ch=24-Math.max(0,dd)*4; out.detail='Expected HCO₃⁻ ≈ '+fmt(ac,'')+' acute or '+fmt(ch,'')+' chronic; compare with measured '+fmt(hc,'')+'.'; }
+    else { out.title='Alkalemia with atypical pattern'; out.detail='Recheck sample/units and assess for mixed disorder.'; }
+  } else {
+    if(coAcid && hAlk) { out.title='Near-normal pH with compensated respiratory acidosis or mixed disorder'; out.detail='PaCO₂ and HCO₃⁻ are both elevated; chronicity and clinical context determine whether compensation is appropriate.'; }
+    else if(coAlk && hAcid) { out.title='Near-normal pH with compensated respiratory alkalosis or mixed disorder'; out.detail='PaCO₂ and HCO₃⁻ are both reduced.'; }
+    else out.title='pH in reference range';
+  }
+  if(out.pf!=null) out.flags.push('P/F ratio ≈ '+fmt(out.pf,'')+'. Interpret with FiO₂, PEEP, disease and altitude/transport context.');
+  return out;
+}
+function activeProtocolBicarb(){
+  var p=activeProtocol(); if(!p) return null;
+  var rows=[]; p.b.forEach(function(b){ if(b[0]==='rx' && /bicarbonate/i.test(String(b[1].n))) rows.push(b[1]); });
+  return rows.length?{p:p,rows:rows}:null;
+}
+function ventActions(){
+  var V=CS.vent, A=abgRead(), p=ventProfile(), acts=[], co=vnum(V.paco2), ph=vnum(V.ph), hc=vnum(V.hco3), spo=vnum(CS.vitals.spo2), fio=vnum(V.fio2), rr=vnum(V.rr), plat=vnum(V.pplat), peep=vnum(V.peep);
+  function add(type,title,detail,k){ acts.push({type:type,title:title,detail:detail,k:k||'air'}); }
+  if(co!=null && ph!=null && co>45 && ph<7.35){
+    if(p==='old') add('Ventilation','Avoid reflexively increasing RR in obstructive disease','Prioritize expiratory time / auto-PEEP assessment. AIRLIFE obstructive starting I:E is at least 1:4 and severe bronchospasm may require 1:6 or longer.','warn');
+    else if(rr!=null){ var goal=40, est=rr*co/goal; add('Calculated cross-check','RR equivalent ≈ '+fmt(est,'')+'/min if Vt and dead space were unchanged','This is a proportional minute-ventilation estimate, not an automatic setting. Compare with the PCG starting range, pressures and patient response before requesting a change.','air'); }
+    else add('Ventilation','Increase effective minute ventilation if clinically appropriate','Use RR and/or Vt within the applicable lung-protective/age-specific PCG limits; reassess PaCO₂/ETCO₂ and pressures.','air');
+  }
+  if(co!=null && ph!=null && co<35 && ph>7.45) add('Ventilation','Consider reducing excessive minute ventilation','If the alkalemia is ventilator-driven, reassess RR/Vt and the reason for hyperventilation before changing settings.','air');
+  if(hc!=null && ph!=null && hc<22 && ph<7.35) add('Metabolic acidosis','Preserve compensatory ventilation while treating the cause','Do not normalize PaCO₂ by reducing ventilation in a patient compensating for metabolic acidosis. Use the cause-specific PCG and OLMD/receiving clinician for therapy decisions.','med');
+  if(plat!=null && plat>30) add('Pressure','Plateau pressure is above the AIRLIFE LP target','Reassess Vt, compliance, tube/circuit and patient factors. Adult LP procedure directs titration to keep pPlat under 30 cmH₂O.','warn');
+  if((spo!=null && spo<90) && fio!=null && fio>=99 && p!=='old' && p!=='peds') add('Oxygenation','AIRLIFE LP pathway: consider PEEP +2 cmH₂O increments','Protocol specifies PEEP titration in 2 cmH₂O steps when SpO₂ <90% on FiO₂ 1.0; watch hemodynamics and pressures.','air');
+  if(p==='peds' && spo!=null && spo<92) add('Oxygenation','Below pediatric PCG oxygenation target','Pediatric mechanical ventilation guideline targets SpO₂ >92% unless a mixed cardiac lesion requires 75–85%. Reassess FiO₂/PEEP and lesion-specific goals.','ped');
+  if(p==='old' && peep!=null && peep>6) add('Obstructive caution','PEEP is above the usual AIRLIFE obstructive starting range','Assess intrinsic/auto-PEEP and expiratory flow before adding external PEEP. Protocol starting range is 3–6 cmH₂O.','warn');
+  var bc=activeProtocolBicarb();
+  if(bc) add('Medication checkpoint','Sodium bicarbonate is present in the active PCG','Use the exact protocol indication and dose shown in PCG '+bc.p.id+'; do not give bicarbonate solely because an ABG is acidemic.','med');
+  else if(ph!=null && ph<7.1) add('Medication checkpoint','Severe acidemia ≠ automatic bicarbonate','The app will only promote bicarbonate when the active AIRLIFE protocol contains an indication. Use OLMD/receiving clinician for non-protocol acid-base therapy.','med');
+  return acts;
+}
+function ventBrief(){
+  var V=CS.vent, S=ventStart(), A=abgRead(), acts=ventActions(), p=activeProtocol(), bits=[];
+  bits.push('OLMD / receiving clinician vent review');
+  var pt=[]; if(ageY()!=null) pt.push((PT.au==='m'?PT.age+' mo':fmt(ageY(),'')+' yr')); if(kg()!=null) pt.push(fmt(kg(),'')+' kg'); if(cm()!=null) pt.push(fmt(cm(),'')+' cm'); if(pt.length) bits.push('Patient: '+pt.join(', '));
+  bits.push('Profile: '+S.profile.toUpperCase()+(p?' | Active PCG '+p.id+' '+p.t:''));
+  var vs=[]; ['mode','rr','vt','peep','fio2','pip','pplat','ie'].forEach(function(k){ if(V[k]!==''&&V[k]!=null) vs.push(k.toUpperCase()+' '+V[k]); }); if(vs.length) bits.push('Current vent: '+vs.join(' | '));
+  var ab=[]; if(V.ph) ab.push('pH '+V.ph); if(V.paco2) ab.push('PaCO2 '+V.paco2); if(V.hco3) ab.push('HCO3 '+V.hco3); if(V.pao2) ab.push('PaO2 '+V.pao2); if(ab.length) bits.push('ABG: '+ab.join(' | ')+' → '+A.title);
+  if(acts.length) bits.push('Proposed review: '+acts.map(function(x){return x.title;}).join('; '));
+  bits.push('Request: please approve / modify vent changes and any non-standing-order medication intervention.');
+  return bits.join('\n');
+}
+function viewVentABG(){
+  var V=CS.vent, S=ventStart(), A=abgRead(), acts=ventActions(), h=[];
+  h.push('<section class="venthero"><div class="ey">Offline respiratory decision support</div><h2>Ventilator + ABG Flight Deck</h2><p>Start from AIRLIFE age/weight guidance, compare the sending facility settings, interpret the blood gas, then build an OLMD/receiving-clinician request. Protocol rules stay deterministic and offline; AI should be a cited second opinion, never the source of an uncited setting.</p></section>');
+  h.push('<div class="ventlayout">');
+  h.push('<section class="ventpanel full"><h3>1 · AIRLIFE starting envelope</h3><div class="subline">Choose the physiology. “Auto” uses pediatric when the patient bar identifies a child; otherwise adult lung protective.</div>');
+  h.push('<div class="ventfields two"><label class="cf"><span>Vent profile</span><select data-cs="vent.profile">'+[['auto','Auto from patient'],['lp','Adult · Lung protective'],['old','Adult · Obstructive / asthma / COPD'],['edema','Adult · Pulmonary edema'],['peds','Pediatric']].map(function(x){return '<option value="'+x[0]+'"'+(V.profile===x[0]?' selected':'')+'>'+x[1]+'</option>';}).join('')+'</select></label><div class="cf"><span>Source</span><div class="sourceflag" style="margin-top:8px">'+esc(S.src)+'</div></div></div>');
+  h.push('<div class="settinggrid">');
+  [['Mode',S.mode],['Rate',S.rr],['Tidal volume',S.vtml||S.vt],['PEEP',S.peep],['I:E / Ti',S.ie],['Pressure',S.plat||S.pip],['FiO₂',S.fio2]].forEach(function(x){h.push('<div class="setting"><small>'+esc(x[0])+'</small><b>'+esc(x[1]||'—')+'</b></div>');});
+  h.push('</div></section>');
+  h.push('<section class="ventpanel"><h3>2 · Current ventilator</h3><div class="subline">Enter what the sending facility is actually using.</div><div class="ventfields">');
+  var vf=[['Mode','mode','text','A/C'],['RR','rr','number','/min'],['Vt','vt','number','mL'],['PEEP','peep','number','cmH₂O'],['FiO₂','fio2','number','%'],['PIP','pip','number','cmH₂O'],['pPlat','pplat','number','cmH₂O'],['I:E','ie','text','1:2']];
+  vf.forEach(function(x){h.push('<label class="cf"><span>'+x[0]+'</span><input type="'+x[2]+'" '+(x[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[3])+'"></label>');});
+  h.push('</div></section>');
+  h.push('<section class="ventpanel"><h3>3 · ABG / gas</h3><div class="subline">pH + PaCO₂ + HCO₃⁻ unlock acid-base compensation analysis. PaO₂ + FiO₂ add a P/F cross-check.</div><div class="ventfields">');
+  [['pH','ph','7.35'],['PaCO₂','paco2','40'],['HCO₃⁻','hco3','24'],['PaO₂','pao2','90'],['Base excess','be','0'],['Lactate','lactate','mmol/L']].forEach(function(x){h.push('<label class="cf"><span>'+x[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[2])+'"></label>');});
+  h.push('</div><div class="abgstatus"><div class="abgicon">ABG</div><div><b>'+esc(A.title)+'</b><span>'+esc(A.detail)+'</span>'+A.flags.map(function(f){return '<span>• '+esc(f)+'</span>';}).join('')+'</div></div></section>');
+  h.push('<section class="ventpanel full"><h3>4 · Suggested review items</h3><div class="subline">These are cross-checks for a clinician, not autonomous orders. They are generated from AIRLIFE limits + deterministic acid-base math and are intentionally conservative.</div><div class="actionstack">');
+  if(!acts.length) h.push('<div class="actioncard k-air"><div class="atype">Waiting for data</div><b>Enter current settings and/or an ABG.</b><span>The deck can work from either one; both give the best comparison.</span></div>');
+  acts.forEach(function(x){h.push('<div class="actioncard k-'+x.k+'"><div class="atype">'+esc(x.type)+'</div><b>'+esc(x.title)+'</b><span>'+esc(x.detail)+'</span></div>');});
+  h.push('</div>');
+  var p=activeProtocol(); if(p) h.push(targetDeckHTML(p));
+  h.push('</section>');
+  h.push('<section class="ventpanel full"><h3>5 · Build the approval request</h3><div class="subline">Nothing is transmitted. Copy this into your OLMD / receiving-clinician workflow, then document the approval and patient response.</div><textarea class="olmdbrief" id="olmdBrief" readonly>'+esc(ventBrief())+'</textarea><div class="olmdrow"><button class="cbtn go" type="button" data-copybrief>Copy brief</button><a class="cbtn" href="#ask">Ask PCG / evidence</a><span class="sourceflag">No PHI is added automatically</span></div></section>');
+  h.push('</div>');
+  h.push('<div class="crit"><b>Safety boundary:</b> ABG math can identify acid-base patterns and estimate the direction/magnitude of a ventilator change, but the app should not auto-apply ventilator settings or recommend non-protocol medication. Every change still requires bedside assessment, pressure/volume review, the applicable PCG, and OLMD/receiving-clinician involvement when required.</div>');
+  return h.join('');
+}
+
 var CALCTABS = [
   {id:'nines', t:'Rule of Nines', k:'trauma', f:viewNines},
   {id:'conc',  t:'Dose → mL',      k:'dose',   f:viewConc},
   {id:'inf',   t:'Bag / Infusion', k:'press',  f:viewInf},
   {id:'drip',  t:'Drip rate',     k:'gen',    f:viewDrip},
+  {id:'vent',  t:'Vent / ABG',    k:'air',    f:viewVentABG},
   {id:'quick', t:'Bedside',       k:'med',    f:viewQuick}
 ];
 
@@ -4999,6 +5165,81 @@ function toggleTheme(){
 /* ---------- patient state — memory only ---------- */
 var PT = {age:null, au:'y', wt:null, wu:'kg', ht:null, hu:'cm', tbsa:null, dx:'', tags:[]};
 
+/* ---------- interfacility preflight — memory first, explicit session save ---------- */
+function freshIFT(){
+  return {
+    age:'', ageU:'y', wt:'', wtU:'kg', dx:'', labs:'',
+    sending:{facility:'',unit:'',phone:'',contact:'',physician:''},
+    receiving:{facility:'',unit:'',phone:'',physician:''},
+    meds:[{drug:'',rate:'',unit:'mcg/min',amt:'',amtU:'mg',vol:'',volU:'mL',note:''}],
+    support:{
+      ino:false, inoPpm:'', inoSystem:'',
+      ecmo:false, ecmoType:'VA', ecmoFlow:'', ecmoRpm:'', ecmoSweep:'', ecmoFio2:'', ecmoAccess:'', ecmoReturn:'',
+      iabp:false, iabpRatio:'1:1', iabpTrigger:'ECG', iabpAug:'', iabpSize:'', iabpSite:'',
+      impella:false, impellaModel:'', impellaP:'', impellaFlow:'', impellaSize:'', impellaSite:'', impellaDepth:'',
+      sheath1Size:'', sheath1Site:'', sheath2Size:'', sheath2Site:''
+    },
+    skin:{sites:[],finding:'',stage:'',note:''},
+    other:'', ventUsed:false, savedAt:'', _loaded:false, _seeded:false
+  };
+}
+var IFT = freshIFT();
+function iftGet(path){
+  var p=String(path||'').split('.'), o=IFT;
+  for(var i=0;i<p.length;i++){ if(o==null) return ''; o=o[p[i]]; }
+  return o==null?'':o;
+}
+function iftSet(path,val){
+  var p=String(path||'').split('.'), o=IFT;
+  for(var i=0;i<p.length-1;i++){ if(!o[p[i]] || typeof o[p[i]]!=='object') o[p[i]]={}; o=o[p[i]]; }
+  o[p[p.length-1]]=val;
+}
+function iftSyncPatient(){
+  PT.age = IFT.age==='' ? null : num(IFT.age); PT.au=IFT.ageU||'y';
+  PT.wt = IFT.wt==='' ? null : num(IFT.wt); PT.wu=IFT.wtU||'kg';
+  PT.dx = IFT.dx||'';
+  var a=document.getElementById('iAge'), w=document.getElementById('iWt'), d=document.getElementById('iDx');
+  if(a){ a.value=IFT.age; a.closest('.fld').classList.toggle('on',PT.age!=null); }
+  if(w){ w.value=IFT.wt; w.closest('.fld').classList.toggle('on',PT.wt!=null); }
+  if(d) d.value=IFT.dx;
+  document.querySelectorAll('[data-au]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-au')===PT.au?'true':'false');});
+  document.querySelectorAll('[data-wu]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-wu')===PT.wu?'true':'false');});
+}
+function iftSeedPatient(){
+  if(IFT._seeded) return;
+  if(IFT.age==='' && PT.age!=null){ IFT.age=String(PT.age); IFT.ageU=PT.au; }
+  if(IFT.wt==='' && PT.wt!=null){ IFT.wt=String(PT.wt); IFT.wtU=PT.wu; }
+  if(!IFT.dx && PT.dx) IFT.dx=PT.dx;
+  IFT._seeded=true;
+}
+function iftSaveDraft(){
+  IFT.savedAt=new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+  try{ sessionStorage.setItem('airlife-ift-draft-v1',JSON.stringify({ift:IFT,vent:CS.vent,vitals:CS.vitals})); }catch(e){}
+}
+function iftLoadDraft(){
+  if(IFT._loaded) return;
+  IFT._loaded=true;
+  try{
+    var raw=sessionStorage.getItem('airlife-ift-draft-v1');
+    if(!raw) return;
+    var z=JSON.parse(raw);
+    if(z && z.ift){ var base=freshIFT(); IFT=Object.assign(base,z.ift); IFT.support=Object.assign(base.support,z.ift.support||{}); IFT.skin=Object.assign(base.skin,z.ift.skin||{}); IFT._loaded=true; IFT._seeded=true; }
+    if(z && z.vent) CS.vent=Object.assign(CS.vent,z.vent);
+    if(z && z.vitals) CS.vitals=Object.assign(CS.vitals,z.vitals);
+    iftSyncPatient();
+  }catch(e){}
+}
+function iftReset(){
+  try{sessionStorage.removeItem('airlife-ift-draft-v1');}catch(e){}
+  IFT=freshIFT(); IFT._loaded=true; IFT._seeded=true;
+  PT.age=PT.wt=PT.tbsa=null; PT.dx=''; PT.tags=[];
+  CS.vitals={sbp:'',dbp:'',hr:'',rr:'',spo2:'',etco2:''};
+  CS.vent={profile:'auto',mode:'A/C',rr:'',vt:'',peep:'',fio2:'100',pip:'',pplat:'',ie:'',ph:'',paco2:'',hco3:'',pao2:'',be:'',lactate:''};
+  var a=document.getElementById('iAge'),w=document.getElementById('iWt'),d=document.getElementById('iDx');
+  if(a){a.value='';a.closest('.fld').classList.remove('on');} if(w){w.value='';w.closest('.fld').classList.remove('on');} if(d)d.value='';
+}
+
+
 function kg(){ return PT.wt == null ? null : (PT.wu === 'lb' ? PT.wt * 0.45359237 : PT.wt); }
 function ageY(){ return PT.age == null ? null : (PT.au === 'm' ? PT.age / 12 : PT.age); }
 function cm(){ return PT.ht == null ? null : (PT.hu === 'in' ? PT.ht * 2.54 : PT.ht); }
@@ -5101,6 +5342,53 @@ function pbw(){
   return {m: 50 + 2.3 * (inches - 60), f: 45.5 + 2.3 * (inches - 60)};
 }
 
+
+/* Normal HR/RR is shown automatically when age is known. Pediatric bands
+   mirror the AIRLIFE pediatric reference carried in this app; adult values
+   are bedside reference ranges, not treatment targets. */
+function normalVitals(){
+  var a = ageY();
+  if(a == null) return null;
+  if(a < 1/12) return {hr:'100–160', rr:'30–60', src:'AIRLIFE pediatric reference'};
+  if(a < 1)    return {hr:'100–160', rr:'30–60', src:'AIRLIFE pediatric reference'};
+  if(a < 3)    return {hr:'100–160', rr:'24–40', src:'AIRLIFE pediatric reference'};
+  if(a < 8)    return {hr:'70–140',  rr:'22–34', src:'AIRLIFE pediatric reference'};
+  if(a < 12)   return {hr:'55–110',  rr:'12–24', src:'AIRLIFE pediatric reference'};
+  if(a < 18)   return {hr:'55–100',  rr:'12–24', src:'AIRLIFE pediatric reference'};
+  return {hr:'60–100', rr:'12–20', src:'adult bedside reference'};
+}
+
+/* High-yield protocol treatment targets. These are intentionally explicit,
+   rather than AI-inferred, so the flight deck can rank drugs offline. */
+var TARGETS = {
+  '3.3':{items:[['HR','~100 bpm','Diltiazem maintenance target after conversion / control','card']], meds:['Diltiazem','Metoprolol','Amiodarone']},
+  '3.5':{items:[['HR','< 60 = adult bradycardia','Symptomatic pacing usually 10–20 bpm above intrinsic, or 60 if no rate','card']], meds:['Atropine','Epinephrine','Dopamine']},
+  '4.13':{items:[['MAP','65 mmHg','Titrate vasopressors / inotropes to MAP 65','press'],['MAP / SBP','60–65 / 90','Hypovolemic branch target when hypotensive','press']], meds:['Norepinephrine','Epinephrine','Vasopressin','Dopamine','DOBUTamine']},
+  '4.14':{items:[['NIBP','Protocol-specific','Use the BP target from the active CVA / aortic guideline','press']], meds:['Nicardipine','Labetalol','Hydralazine','Esmolol']},
+  '5.6':{items:[['SBP','≥ 90 mmHg','Avoid systolic pressure below 90 in head injury','trauma'],['ETCO₂','35–40 mmHg','Until measured pCO₂ is available','air']], meds:['Norepinephrine','Fentanyl','Midazolam']},
+  '2.6':{items:[['MAP','> 60 mmHg','If MAP falls below 60, use shock guideline rather than pulmonary-edema medications','press'],['SpO₂','> 93%','Oxygenation target in protocol','air']], meds:['Nitroglycerin','Furosemide']},
+  '4.1':{items:[['SBP','> 90 mmHg','Persistent hypotension branch','press'],['SpO₂','> 93%','Oxygenation target','air']], meds:['Epinephrine']}
+};
+function activeProtocol(){
+  if(!hasCase()) return null;
+  var r = caseRank();
+  return r && r.length ? r[0].p : null;
+}
+function targetSpec(p){ return p && TARGETS[p.id] ? TARGETS[p.id] : null; }
+function normDrug(n){ return String(n||'').toLowerCase().replace(/<[^>]*>/g,'').replace(/\([^)]*\)/g,'').replace(/[^a-z0-9]+/g,' ').trim(); }
+function targetDrugMatch(name,p){
+  var t=targetSpec(p); if(!t) return false; var n=normDrug(name);
+  return t.meds.some(function(m){ var x=normDrug(m); return n.indexOf(x)>-1 || x.indexOf(n)>-1; });
+}
+function targetDeckHTML(p){
+  var t=targetSpec(p); if(!t) return '';
+  var h=['<section class="targetdeck"><div class="targethead"><b>Protocol targets</b><span>PCG '+esc(p.id)+' · surfaced before medication search</span></div><div class="targetgrid">'];
+  t.items.forEach(function(x){ h.push('<div class="targetchip k-'+x[3]+'"><small>'+esc(x[0])+'</small><strong>'+esc(x[1])+'</strong><em>'+esc(x[2])+'</em></div>'); });
+  h.push('</div><div class="targetmeds"><span class="sourceflag">priority medications</span>');
+  t.meds.forEach(function(m){ h.push('<button type="button" class="targetmed" data-rxjump="'+esc(m)+'">'+esc(m)+'</button>'); });
+  h.push('</div></section>'); return h.join('');
+}
+
 function metaHTML(){
   var t = [], w = kg(), a = ageY(), ped = isPed(), mini = $('#pt').classList.contains('mini');
   var chrome = '<button class="pttog" id="pttog" type="button">' + (mini ? 'OPEN PATIENT' : 'HIDE') + '</button>' +
@@ -5113,6 +5401,11 @@ function metaHTML(){
     (a != null ? ' <b>' + (PT.au === 'm' ? PT.age + ' mo' : fmt(a,'') + ' yr') + '</b>' : '') + '</span>');
   if(w != null) t.push('<span class="tag">Wt <b>' + fmt(w,'') + ' kg</b>' +
     (PT.wu === 'lb' ? ' <span style="opacity:.6">(' + fmt(PT.wt,'') + ' lb)</span>' : '') + '</span>');
+  var nv = normalVitals();
+  if(nv){
+    t.push('<span class="normtag">Normal HR <b>' + nv.hr + '</b></span>');
+    t.push('<span class="normtag">Normal RR <b>' + nv.rr + '</b></span>');
+  }
   if(ped && a != null){
     var e = ettSize();
     if(e) t.push('<span class="tag ped">ETT <b>' + fmt(e.unc,'') + '</b> uncuffed / <b>' + fmt(e.unc - 0.5,'') + '</b> cuffed</span>');
@@ -5480,6 +5773,22 @@ function itemHTML(p, sub){
 /* ---------- views ---------- */
 var VIEW = $('#view');
 var Q = '', RXQ = '', ACTIVE_CHIP = null, DQ = '';
+var QFSTATE = {presentation:'', mechanism:'', ob:'', section:'', drug:'', calc:''};
+function qfChipKind(c){
+  if(!c) return '';
+  var isEnv = c.l === 'Drowning' || c.l === 'Hypothermia' || c.l === 'Heat / hyperthermia';
+  if(c.ob) return 'ob';
+  if(c.k === 'trauma' || isEnv || c.l === 'Hemorrhage') return 'mechanism';
+  return 'presentation';
+}
+function qfSelected(kind){
+  if(QFSTATE[kind] !== '' && QFSTATE[kind] != null) return String(QFSTATE[kind]);
+  for(var qfi=PT.tags.length-1;qfi>=0;qfi--){
+    var idx=PT.tags[qfi]; if(qfChipKind(CHIPS[idx])===kind) return String(idx);
+  }
+  return '';
+}
+function selAttr(v,cur){ return String(v)===String(cur) ? ' selected' : ''; }
 
 
 
@@ -5685,6 +5994,8 @@ function vitalsHTML(){
     v.push('<div class="vit k-' + k + '"><span class="vl">' + lab + '</span><span class="vv">' + val + '</span>' +
       (note ? '<span class="vn">' + note + '</span>' : '') + '</div>');
   }
+  var nv = normalVitals();
+  if(nv){ card('card','Normal HR', nv.hr + ' bpm', nv.src); card('air','Normal RR', nv.rr + ' /min', nv.src); }
   var e = ettSize();
   if(e) card('air','ETT', fmt(e.unc,'') + ' / ' + fmt(e.unc - 0.5,''), 'uncuffed / cuffed · depth ' + fmt(e.unc * 3,'') + ' cm');
   var sb = sbpMin();
@@ -5759,6 +6070,7 @@ function caseHTML(){
   h.push('<div class="ph1"><span class="pn">' + top.id + '</span><h2>' + esc(top.t) + ' ' + ageBadge(top) +
     '<span class="sub">' + esc(SEC[top.s].t) + (top.rev ? ' · Rev ' + top.rev : '') + ' · source p.' + top.pg +
     (nrx ? ' · ' + nrx + ' medication' + (nrx > 1 ? 's' : '') : '') + '</span></h2></div>');
+  h.push(targetDeckHTML(top));
   h.push(miniRx(top, 4));
   h.push('<div class="pacts"><a class="go" href="#p/' + top.id + '">Open guideline</a>' +
     (nrx ? '<a href="#d/' + top.id + '">Doses only</a>' : '') + '</div>');
@@ -5802,6 +6114,7 @@ function deckHero(){
     '<h1>One screen from scene to receiving bed.</h1>' +
     '<p>Search once, choose a presentation, or use a short dropdown. The app keeps the source protocol dose beside every patient calculation, then surfaces procedures, calculators and grounded guideline help.</p>' +
     '<div class="deckactions">' +
+      '<a class="deckaction" href="#ift"><i>⇄</i><b>Dispatch / IFT patient</b><span>Sending info · drips · vent · labs · devices</span></a>' +
       '<button class="deckaction" type="button" data-focus="iDx"><i>⌖</i><b>Build a case</b><span>Presentation + patient context</span></button>' +
       '<a class="deckaction" href="#ask"><i>✦</i><b>Ask PCG</b><span>Grounded AI + offline retrieval</span></a>' +
       '<a class="deckaction" href="#calc/inf"><i>∑</i><b>Bag math</b><span>mg or g in mL/L → exact pump rate</span></a>' +
@@ -5811,24 +6124,38 @@ function deckHero(){
 
 function quickFindHTML(){
   function opts(kind){
-    var o = ['<option value="">Select…</option>'];
+    var cur=qfSelected(kind), rows=[];
     CHIPS.forEach(function(c, i){
       var isEnv = c.l === 'Drowning' || c.l === 'Hypothermia' || c.l === 'Heat / hyperthermia';
       var ok = kind === 'presentation' ? (c.k !== 'trauma' && !c.ob && !isEnv) :
                kind === 'mechanism' ? (c.k === 'trauma' || isEnv || c.l === 'Hemorrhage') : !!c.ob;
-      if(ok) o.push('<option value="' + i + '">' + esc(c.l) + '</option>');
+      if(ok) rows.push({c:c,i:i});
     });
+    rows.sort(function(a,b){ return a.c.l.localeCompare(b.c.l,undefined,{sensitivity:'base'}); });
+    var o = ['<option value="">Select…</option>'];
+    rows.forEach(function(x){ o.push('<option value="'+x.i+'"'+selAttr(x.i,cur)+'>'+esc(x.c.l)+'</option>'); });
     return o.join('');
   }
   var h = ['<section class="quickfinder">'];
-  h.push('<div class="qfhead"><div><span>QUICK FIND</span><h2>Get to the right PCG in a few taps.</h2></div><small>Search accepts abbreviations, drug names and PCG numbers.</small></div>');
+  h.push('<div class="qfhead"><div><span>QUICK FIND</span><h2>Get to the right PCG in a few taps.</h2></div><small>Selections stay visible. Menus are A–Z; target-linked drugs remain promoted.</small></div>');
   h.push('<div class="qfgrid">');
-  h.push('<label><span>Clinical presentation</span><select data-qpick="presentation">' + opts('presentation') + '</select></label>');
-  h.push('<label><span>Mechanism / environmental</span><select data-qpick="mechanism">' + opts('mechanism') + '</select></label>');
-  h.push('<label><span>OB / neonatal</span><select data-qpick="ob">' + opts('ob') + '</select></label>');
-  h.push('<label><span>Protocol section</span><select data-qsection><option value="">Browse section…</option>' + SECTIONS.map(function(x){ return '<option value="' + x.n + '">' + x.n + ' · ' + esc(x.t) + ' — ' + esc(x.sub) + '</option>'; }).join('') + '</select></label>');
-  h.push('<label><span>Medication</span><select data-qdrug><option value="">Find a drug…</option>' + FORM.map(function(f,i){ return '<option value="' + i + '">' + esc(f.n) + '</option>'; }).join('') + '</select></label>');
-  h.push('<label><span>Calculator</span><select data-qcalc><option value="">Open calculator…</option><option value="conc">Dose → mL</option><option value="inf">Bag / infusion</option><option value="drip">Gravity drip</option><option value="quick">Bedside calculations</option><option value="nines">Rule of Nines</option></select></label>');
+  ['presentation','mechanism','ob'].forEach(function(kind){
+    var label=kind==='presentation'?'Clinical presentation':(kind==='mechanism'?'Mechanism / environmental':'OB / neonatal');
+    h.push('<label><span>'+label+'</span><select class="'+(qfSelected(kind)!==''?'haspick':'')+'" data-qpick="'+kind+'">'+opts(kind)+'</select></label>');
+  });
+  var secs=SECTIONS.slice().sort(function(a,b){return a.t.localeCompare(b.t,undefined,{sensitivity:'base'});});
+  h.push('<label><span>Protocol section</span><select class="'+(QFSTATE.section?'haspick':'')+'" data-qsection><option value="">Browse section A–Z…</option>' + secs.map(function(x){ return '<option value="' + x.n + '"'+selAttr(x.n,QFSTATE.section)+'>' + esc(x.t) + ' · ' + x.n + ' — ' + esc(x.sub) + '</option>'; }).join('') + '</select></label>');
+  var qap = activeProtocol();
+  var allDrugs = FORM.map(function(f,i){return {f:f,i:i};}).sort(function(a,b){return a.f.n.localeCompare(b.f.n,undefined,{sensitivity:'base'});});
+  var pri=qap?allDrugs.filter(function(x){return targetDrugMatch(x.f.n,qap);}):[];
+  var priIds={}; pri.forEach(function(x){priIds[x.i]=1;});
+  var others=allDrugs.filter(function(x){return !priIds[x.i];});
+  var dopts=['<option value="">Find a drug A–Z…</option>'];
+  if(pri.length){dopts.push('<optgroup label="Current protocol target">');pri.forEach(function(x){dopts.push('<option value="'+x.i+'"'+selAttr(x.i,QFSTATE.drug)+'>★ '+esc(x.f.n)+'</option>');});dopts.push('</optgroup>');}
+  dopts.push('<optgroup label="All medications A–Z">');others.forEach(function(x){dopts.push('<option value="'+x.i+'"'+selAttr(x.i,QFSTATE.drug)+'>'+esc(x.f.n)+'</option>');});dopts.push('</optgroup>');
+  h.push('<label><span>Medication' + (qap && targetSpec(qap) ? ' · target-aware' : '') + '</span><select class="'+(QFSTATE.drug!==''?'haspick':'')+'" data-qdrug>'+dopts.join('')+'</select></label>');
+  var calcs=[['inf','Bag / infusion'],['quick','Bedside calculations'],['conc','Dose → mL'],['drip','Gravity drip'],['nines','Rule of Nines'],['vent','Vent / ABG']].sort(function(a,b){return a[1].localeCompare(b[1]);});
+  h.push('<label><span>Calculator</span><select class="'+(QFSTATE.calc?'haspick':'')+'" data-qcalc><option value="">Open calculator A–Z…</option>'+calcs.map(function(x){return '<option value="'+x[0]+'"'+selAttr(x[0],QFSTATE.calc)+'>'+x[1]+'</option>';}).join('')+'</select></label>');
   h.push('</div>');
   var common = ['Airway compromise','Cardiac arrest','Tachycardia','Bradycardia','Hypotension / shock','Hemorrhage'];
   h.push('<div class="fastlane"><span>Common</span>');
@@ -5947,6 +6274,7 @@ function viewProtocol(id){
   if(XREV[p.id]) meta.push('cited elsewhere as “PCG ' + XREV[p.id] + '” — corrected here');
   h.push('<div class="pmeta">' + esc(meta.join(' · ')) + '</div>');
   h.push('<div class="kbar ' + K + '"></div>');
+  h.push(targetDeckHTML(p));
 
   if(p.id === '3.6' || p.id === '8.6' || p.id === 'O.7') h.push(codeLaunchHTML(p.id));
 
@@ -6053,6 +6381,10 @@ function viewDoses(){
     h.push('<div class="nowt"><b>No weight entered.</b> Weight-based doses will show as prompts until you add one. ' +
       'Age alone still gives you tube sizes and energy settings.<button type="button" data-focus="iWt">Enter weight</button></div>');
   }
+  var ap = activeProtocol();
+  if(ap && ap.b.some(function(b){return b[0]==='rx';})){
+    h.push('<div class="targetdeck"><div class="targethead"><b>Current case first</b><span>PCG ' + esc(ap.id) + ' · ' + esc(ap.t) + '</span></div><div style="margin-top:9px"><a class="cbtn go" href="#d/' + ap.id + '">Open current protocol doses</a></div></div>');
+  }
   h.push('<div class="srchwrap"><input id="dq" type="search" autocomplete="off" spellcheck="false" placeholder="Filter problems…" value="' + esc(DQ) + '"></div>');
   var q = DQ.trim().toLowerCase();
   var groups = {};
@@ -6117,13 +6449,15 @@ function viewForm(){
     'For the full list approved for flight paramedics and flight nurses, refer to the applicable State Medical Board. ' +
     '<a class="xref" href="#rxp">Looking for a drug by protocol instead?</a></div>');
   h.push('<div class="srchwrap"><input id="rxq" type="search" autocomplete="off" spellcheck="false" placeholder="Filter drug or indication…" value="' + esc(RXQ) + '"></div>');
-  var q = RXQ.trim().toLowerCase(), n = 0;
-  FORM.forEach(function(f){
+  var q = RXQ.trim().toLowerCase(), n = 0, ap = activeProtocol();
+  if(ap && targetSpec(ap)){ h.push('<div class="note k-dose"><b>Target-aware ordering:</b> medications supporting PCG ' + esc(ap.id) + ' targets are pinned first.</div>'); h.push(targetDeckHTML(ap)); }
+  var forms = FORM.slice().sort(function(a,b){ var aa=ap&&targetDrugMatch(a.n,ap)?1:0, bb=ap&&targetDrugMatch(b.n,ap)?1:0; return bb-aa; });
+  forms.forEach(function(f){
     var hay = (f.n + ' ' + (f.alt||'') + ' ' + (f.ind||[]).join(' ') + ' ' + f.cls).toLowerCase();
     if(q && hay.indexOf(q) < 0) return;
     n++;
     h.push('<div class="fcard k-' + f.cls + '">');
-    h.push('<div class="fhd"><h3>' + esc(f.n) + '</h3>' + (f.alt ? '<em>' + esc(f.alt) + '</em>' : '') +
+    h.push('<div class="fhd"><h3>' + esc(f.n) + (ap && targetDrugMatch(f.n,ap) ? '<span class="prioritybadge">current target</span>' : '') + '</h3>' + (f.alt ? '<em>' + esc(f.alt) + '</em>' : '') +
       '<span class="cls">' + esc(f.cls) + '</span></div>');
     h.push(fdoses(f.a, 'Adult', 'ad'));
     h.push(fdoses(f.p, 'Pediatric', 'pd'));
@@ -6161,11 +6495,12 @@ function viewRxProto(){
   h.push('<div class="phead k-gen"><span class="pn">◇</span><h1>Drugs by Guideline<small>Every medication as it appears in each protocol</small></h1></div>');
   h.push('<div class="kbar k-gen"></div>');
   h.push('<div class="srchwrap"><input id="rxq" type="search" autocomplete="off" spellcheck="false" placeholder="Filter drug…" value="' + esc(RXQ) + '"></div>');
-  var q = RXQ.trim().toLowerCase();
-  var list = RX.filter(function(d){ return !q || d.n.toLowerCase().indexOf(q) > -1; });
+  var q = RXQ.trim().toLowerCase(), ap = activeProtocol();
+  var list = RX.filter(function(d){ return !q || d.n.toLowerCase().indexOf(q) > -1; }).sort(function(a,b){ var aa=ap&&targetDrugMatch(a.n,ap)?1:0, bb=ap&&targetDrugMatch(b.n,ap)?1:0; return bb-aa || a.n.localeCompare(b.n); });
+  if(ap && targetSpec(ap)) h.push('<div class="targetdeck"><div class="targethead"><b>Current target</b><span>PCG ' + esc(ap.id) + ' target-supporting drugs are pinned first.</span></div></div>');
   if(!list.length) h.push('<div class="empty"><b>No medication matched “' + esc(RXQ) + '”</b>Check the spelling, or search the guidelines instead.</div>');
   list.forEach(function(d){
-    h.push('<div class="blk"><h3>' + esc(d.n) + '</h3>');
+    h.push('<div class="blk"><h3>' + esc(d.n) + (ap && targetDrugMatch(d.n,ap) ? '<span class="prioritybadge">current target</span>' : '') + '</h3>');
     d.e.forEach(function(x){
       h.push('<div class="isub ' + keyOf(x.p) + '" style="padding-left:0;margin:0 0 4px"><a class="xref" href="#p/' + x.p.id + '">PCG ' +
         x.p.id + ' ' + esc(shortT(x.p.t)) + '</a></div>');
@@ -6238,12 +6573,12 @@ function viewAbout(){
     '<li><strong>' + FORM.length + ' formulary drugs</strong> from the 2024 revision, plus ' + RXCOUNT + ' agents indexed by guideline.</li>' +
     '<li><strong>' + V24.length + ' revision notes</strong> and ' + Object.keys(EV).length + ' evidence advisories, ' +
       Object.keys(RESOLVED).length + ' of which the 2024 revision settles.</li>' +
-    '<li><strong>' + CALCTABS.length + ' calculators</strong> — age-scaled Rule of Nines, dose-to-volume, bag-to-pump infusion math with mL/L input and mcg/min ↔ mcg/kg/min conversion, gravity drip and bedside derivations.</li>' +
-    '<li><strong>Active arrest companion</strong> — transient CPR timer, rhythm confirmation, shock/epinephrine timing and ACLS/PALS/NRP protocol prompts.</li>' +
+    '<li><strong>' + CALCTABS.length + ' calculators</strong> — age-scaled Rule of Nines, dose-to-volume, bag-to-pump infusion math, gravity drip, bedside derivations, and an offline Ventilator / ABG decision-support deck.</li>' +
+    '<li><strong>Active arrest companion</strong> — transient CPR timer, rhythm confirmation, shock/epinephrine timing and ACLS/PALS/NRP protocol prompts.</li><li><strong>IFT preflight worksheet</strong> — dispatch contacts, drips with source-visible rate cross-checks, vent settings, nitric/ECMO/IABP/Impella, sheaths, touch body map and a copyable chart snapshot.</li>' +
     '<li><strong>' + MCS.length + ' circulatory support pages</strong> — Impella, Cardiosave IABP and ECMO, ' +
       MCS.reduce(function(n,d){return n+d.alarms.length;},0) + ' alarms between them.</li>' +
     '<li>A <strong>retrieval-grounded assistant</strong> that answers from the loaded guideline text and cites the PCG number.</li>' +
-    '<li>Runs offline once loaded. Nothing is stored and nothing is transmitted — the patient fields clear when the page closes.</li></ul></div>');
+    '<li>Runs offline once loaded. Patient fields remain memory-only. The IFT worksheet can be explicitly saved to this browser session for reload protection; it has no patient-name, DOB or MRN field and can be cleared after charting.</li></ul></div>');
 
   h.push('<div class="blk"><h3>Cross-reference repair (2020 content)</h3>' +
     '<div class="note">The 2020 document\u2019s internal PCG numbers do not match its own final section numbering. More than twenty references are ' +
@@ -6286,8 +6621,179 @@ function disc(){
     '</div></details>';
 }
 
+
+/* ---------- Interfacility dispatch / transport preflight ---------- */
+function iftNorm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+function iftDrugObj(name){
+  var q=iftNorm(name); if(!q) return null;
+  for(var i=0;i<FORM.length;i++){
+    var f=FORM[i], n=iftNorm(f.n), a=iftNorm(f.alt||'');
+    if(q===n || q===a || n.indexOf(q)>-1 || q.indexOf(n)>-1) return f;
+  }
+  return null;
+}
+function iftDrugOptions(){
+  var a=FORM.map(function(f){
+    var inf=(f.a||[]).concat(f.p||[]).concat(f.ob||[]).some(function(x){return /infusion/i.test(x.r||'') || /\/(min|hr)/i.test(x.d||'');});
+    return {f:f,inf:inf};
+  });
+  a.sort(function(x,y){return (y.inf-x.inf)||x.f.n.localeCompare(y.f.n);});
+  return a.map(function(x){return '<option value="'+esc(x.f.n)+'">';}).join('');
+}
+function iftActiveRx(name){
+  var p=activeProtocol(), q=iftNorm(name), out=[]; if(!p||!q) return null;
+  p.b.forEach(function(b){
+    if(b[0]!=='rx') return; var r=b[1], rn=iftNorm(r.n);
+    if(rn.indexOf(q)>-1 || q.indexOf(rn.replace(/ infusion$/,''))>-1 || q.indexOf(rn)>-1) out.push(r);
+  });
+  return out.length?{p:p,rows:out}:null;
+}
+function iftRefHTML(row){
+  if(!row || !row.drug) return '<div class="iftref"><b>Protocol cross-check:</b> choose a medication to show any matching active-PCG or loaded formulary dose/rate beside the sending-facility order.</div>';
+  var ar=iftActiveRx(row.drug), f=iftDrugObj(row.drug), rows=[], label='';
+  if(ar){ rows=ar.rows; label='Active PCG '+ar.p.id+' · '+ar.p.t; }
+  else if(f){
+    if(isOB() && f.ob && f.ob.length){rows=f.ob; label='HROB / OB formulary';}
+    else if(isPed()){
+      if(f.p && f.p.length){rows=f.p; label='Pediatric formulary';}
+      else return '<div class="iftref"><b>No pediatric-specific dose row found in the loaded formulary for '+esc(f.n)+'.</b> Document the sending order as given and open the applicable pediatric PCG / OLMD before changing it.</div>';
+    } else {rows=f.a||[];label='Adult formulary';}
+  }
+  if(!rows.length) return '<div class="iftref"><b>No matching AIRLIFE dose/rate found.</b> Keep the sending-facility order documented; do not infer a transport dose from this screen.</div>';
+  var inf=rows.filter(function(x){return /infusion/i.test(x.r||'') || /\/(min|hr)/i.test(x.d||'');});
+  if(inf.length) rows=inf;
+  var h=['<div class="iftref"><b>'+esc(label)+'</b>'];
+  rows.slice(0,4).forEach(function(x){
+    var calc=x.calc?dose(x.calc):null, c='';
+    if(calc && !calc.need) c=' · patient math <strong>'+esc(calc.v+' '+calc.u)+'</strong>';
+    h.push('<div class="refrow"><strong>'+esc(x.d)+'</strong><em>'+esc(x.r||'')+c+'</em></div>');
+  });
+  h.push('<div style="margin-top:5px;color:var(--dim)">Reference beside the reported order; it does not replace the sending order, active PCG indication, or OLMD requirement.</div></div>');
+  return h.join('');
+}
+function iftMedRow(row,i){
+  var units=['mcg/min','mcg/kg/min','mg/min','mg/hr','mg/kg/hr','units/min','units/hr','units/kg/hr','mL/hr','g/hr'];
+  var h=['<div class="iftmed">','<div class="iftmedtop">'];
+  h.push('<label><span>Medication / drip</span><input list="iftDrugList" data-iftmed="drug" data-idx="'+i+'" value="'+esc(row.drug||'')+'" placeholder="Norepinephrine"></label>');
+  h.push('<label><span>Current rate</span><input type="number" inputmode="decimal" step="any" data-iftmed="rate" data-idx="'+i+'" value="'+esc(row.rate||'')+'" placeholder="—"></label>');
+  h.push('<label><span>Units</span><select data-iftmed="unit" data-idx="'+i+'">'+units.map(function(u){return '<option'+((row.unit||'')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
+  h.push('<button class="iftremove" type="button" data-iftremovemed="'+i+'" aria-label="Remove medication">×</button></div>');
+  h.push(iftRefHTML(row));
+  h.push('<details><summary style="font:700 10.5px/1 Barlow;color:var(--dim);padding:8px 2px 2px">Bag / mix + note (optional)</summary><div class="iftmix">');
+  h.push('<label><span>Drug in bag</span><input type="number" inputmode="decimal" step="any" data-iftmed="amt" data-idx="'+i+'" value="'+esc(row.amt||'')+'" placeholder="4"></label>');
+  h.push('<label><span>Amount unit</span><select data-iftmed="amtU" data-idx="'+i+'">'+['mcg','mg','g','units'].map(function(u){return '<option'+((row.amtU||'mg')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
+  h.push('<label><span>Bag volume</span><input type="number" inputmode="decimal" step="any" data-iftmed="vol" data-idx="'+i+'" value="'+esc(row.vol||'')+'" placeholder="250"></label>');
+  h.push('<label><span>Volume unit</span><select data-iftmed="volU" data-idx="'+i+'"><option'+((row.volU||'mL')==='mL'?' selected':'')+'>mL</option><option'+((row.volU||'mL')==='L'?' selected':'')+'>L</option></select></label>');
+  h.push('<label><span>Line / note</span><input data-iftmed="note" data-idx="'+i+'" value="'+esc(row.note||'')+'" placeholder="central line / titration goal"></label>');
+  h.push('</div></details></div>');
+  return h.join('');
+}
+function iftSupportDetail(){
+  var S=IFT.support,h=[];
+  if(S.ino) h.push('<div class="supportdetail"><h3>Inhaled nitric oxide</h3><div class="iftfields three"><label class="cf"><span>Current dose</span><input type="number" inputmode="decimal" step="any" data-ift="support.inoPpm" value="'+esc(S.inoPpm)+'" placeholder="ppm"></label><label class="cf"><span>Delivery system</span><input data-ift="support.inoSystem" value="'+esc(S.inoSystem)+'" placeholder="system / cylinder"></label><div class="cf"><span>Chart reminder</span><div class="sourceflag" style="margin-top:8px">document ppm + delivery</div></div></div></div>');
+  if(S.ecmo) h.push('<div class="supportdetail"><h3>ECMO</h3><div class="iftfields"><label class="cf"><span>Type</span><select data-ift="support.ecmoType"><option'+(S.ecmoType==='VA'?' selected':'')+'>VA</option><option'+(S.ecmoType==='VV'?' selected':'')+'>VV</option><option'+(S.ecmoType==='VAV'?' selected':'')+'>VAV</option></select></label><label class="cf"><span>Flow L/min</span><input type="number" inputmode="decimal" step="any" data-ift="support.ecmoFlow" value="'+esc(S.ecmoFlow)+'"></label><label class="cf"><span>RPM</span><input type="number" inputmode="numeric" data-ift="support.ecmoRpm" value="'+esc(S.ecmoRpm)+'"></label><label class="cf"><span>Sweep L/min</span><input type="number" inputmode="decimal" step="any" data-ift="support.ecmoSweep" value="'+esc(S.ecmoSweep)+'"></label><label class="cf"><span>Oxygenator FiO₂ %</span><input type="number" inputmode="decimal" step="any" data-ift="support.ecmoFio2" value="'+esc(S.ecmoFio2)+'"></label><label class="cf"><span>Access cannula / site</span><input data-ift="support.ecmoAccess" value="'+esc(S.ecmoAccess)+'" placeholder="25 Fr RFV"></label><label class="cf"><span>Return cannula / site</span><input data-ift="support.ecmoReturn" value="'+esc(S.ecmoReturn)+'" placeholder="19 Fr RFA"></label><div class="cf"><span>Reference</span><a class="cbtn" href="#mcs/ecmo" style="display:block;text-align:center;padding:12px">ECMO page</a></div></div></div>');
+  if(S.iabp) h.push('<div class="supportdetail"><h3>IABP</h3><div class="iftfields three"><label class="cf"><span>Assist ratio</span><select data-ift="support.iabpRatio">'+['1:1','1:2','1:3'].map(function(x){return '<option'+(S.iabpRatio===x?' selected':'')+'>'+x+'</option>';}).join('')+'</select></label><label class="cf"><span>Trigger</span><select data-ift="support.iabpTrigger">'+['ECG','Pressure','Pacer'].map(function(x){return '<option'+(S.iabpTrigger===x?' selected':'')+'>'+x+'</option>';}).join('')+'</select></label><label class="cf"><span>Augmented pressure</span><input type="number" inputmode="decimal" step="any" data-ift="support.iabpAug" value="'+esc(S.iabpAug)+'" placeholder="mmHg"></label><label class="cf"><span>Sheath / catheter size</span><input data-ift="support.iabpSize" value="'+esc(S.iabpSize)+'" placeholder="Fr"></label><label class="cf"><span>Access site</span><input data-ift="support.iabpSite" value="'+esc(S.iabpSite)+'" placeholder="R femoral"></label><div class="cf"><span>Reference</span><a class="cbtn" href="#mcs/iabp" style="display:block;text-align:center;padding:12px">IABP page</a></div></div></div>');
+  if(S.impella) h.push('<div class="supportdetail"><h3>Impella</h3><div class="iftfields"><label class="cf"><span>Model</span><input data-ift="support.impellaModel" value="'+esc(S.impellaModel)+'" placeholder="CP / 5.5 / RP"></label><label class="cf"><span>P-level</span><input data-ift="support.impellaP" value="'+esc(S.impellaP)+'" placeholder="P8"></label><label class="cf"><span>Flow L/min</span><input type="number" inputmode="decimal" step="any" data-ift="support.impellaFlow" value="'+esc(S.impellaFlow)+'"></label><label class="cf"><span>Sheath size</span><input data-ift="support.impellaSize" value="'+esc(S.impellaSize)+'" placeholder="Fr"></label><label class="cf"><span>Access site</span><input data-ift="support.impellaSite" value="'+esc(S.impellaSite)+'" placeholder="R femoral / axillary"></label><label class="cf"><span>Position / depth</span><input data-ift="support.impellaDepth" value="'+esc(S.impellaDepth)+'" placeholder="cm / marking"></label><div class="cf"><span>Reference</span><a class="cbtn" href="#mcs/impella" style="display:block;text-align:center;padding:12px">Impella page</a></div></div></div>');
+  return h.join('');
+}
+function iftBodySVG(){
+  var on=function(id){return IFT.skin.sites.indexOf(id)>-1?' on':'';};
+  function g(id,label,shape){return '<g class="iftsite'+on(id)+'" data-iftskin="'+esc(id)+'" role="button" tabindex="0" aria-pressed="'+(on(id)?'true':'false')+'">'+shape+'<text class="txt" x="'+(id.indexOf('left')===0?105:(id.indexOf('right')===0?195:(id==='upper back'||id==='sacrum'?390:150)))+'" y="'+({head:50,chest:105,abdomen:155,pelvis:198,'left arm':123,'right arm':123,'left leg':255,'right leg':255,'upper back':118,sacrum:178,'left heel':275,'right heel':275}[id]||50)+'">'+esc(label)+'</text></g>';}
+  var h=['<svg class="iftbody" viewBox="0 0 500 310" xmlns="http://www.w3.org/2000/svg" aria-label="Touch body map for wounds, pressure injuries and injuries">'];
+  h.push('<text x="150" y="18" class="txt" style="font-weight:800">FRONT</text><text x="390" y="18" class="txt" style="font-weight:800">BACK</text>');
+  h.push(g('head','Head','<circle class="shape" cx="150" cy="48" r="25"/>'));
+  h.push(g('chest','Chest','<rect class="shape" x="112" y="78" width="76" height="52" rx="16"/>'));
+  h.push(g('abdomen','Abdomen','<rect class="shape" x="115" y="133" width="70" height="42" rx="12"/>'));
+  h.push(g('pelvis','Pelvis','<rect class="shape" x="120" y="178" width="60" height="34" rx="12"/>'));
+  h.push(g('left arm','L arm','<rect class="shape" x="78" y="82" width="28" height="94" rx="14"/>'));
+  h.push(g('right arm','R arm','<rect class="shape" x="194" y="82" width="28" height="94" rx="14"/>'));
+  h.push(g('left leg','L leg','<rect class="shape" x="119" y="216" width="28" height="70" rx="13"/>'));
+  h.push(g('right leg','R leg','<rect class="shape" x="153" y="216" width="28" height="70" rx="13"/>'));
+  h.push(g('upper back','Upper back','<rect class="shape" x="350" y="77" width="80" height="70" rx="18"/>'));
+  h.push(g('sacrum','Sacrum','<rect class="shape" x="354" y="150" width="72" height="54" rx="15"/>'));
+  h.push(g('left heel','L heel','<rect class="shape" x="354" y="218" width="30" height="68" rx="14"/>'));
+  h.push(g('right heel','R heel','<rect class="shape" x="396" y="218" width="30" height="68" rx="14"/>'));
+  h.push('</svg>'); return h.join('');
+}
+function iftVentHasData(){
+  var V=CS.vent; return !!IFT.ventUsed || !!(V.rr||V.vt||V.peep||V.pip||V.pplat||V.ie||V.ph||V.paco2||V.hco3||V.pao2||V.be||V.lactate) || (V.mode && V.mode!=='A/C') || (V.fio2 && String(V.fio2)!=='100');
+}
+function iftVentValue(k){ return iftVentHasData() ? (CS.vent[k]||'') : ''; }
+function iftBrief(){
+  var x=IFT,S=x.support,V=CS.vent,lines=['INTERFACILITY TRANSPORT PREFLIGHT'];
+  var send=[x.sending.facility,x.sending.unit,x.sending.phone,x.sending.contact?('Contact '+x.sending.contact):'',x.sending.physician?('Sending MD '+x.sending.physician):''].filter(Boolean); if(send.length) lines.push('Sending: '+send.join(' | '));
+  var recv=[x.receiving.facility,x.receiving.unit,x.receiving.phone,x.receiving.physician?('Accepting MD '+x.receiving.physician):''].filter(Boolean); if(recv.length) lines.push('Receiving: '+recv.join(' | '));
+  var pt=[]; if(x.age) pt.push(x.age+' '+(x.ageU==='m'?'mo':'yr')); if(x.wt) pt.push(x.wt+' '+x.wtU); if(x.dx) pt.push('Dx '+x.dx); if(pt.length) lines.push('Patient: '+pt.join(' | '));
+  if(x.labs) lines.push('Key sending labs: '+x.labs);
+  var meds=x.meds.filter(function(m){return m.drug||m.rate;}); if(meds.length){ lines.push('Drips / meds:'); meds.forEach(function(m){var z='- '+(m.drug||'Medication')+(m.rate?' '+m.rate+' '+m.unit:''); if(m.amt&&m.vol) z+=' | bag '+m.amt+' '+m.amtU+' in '+m.vol+' '+m.volU; if(m.note)z+=' | '+m.note; lines.push(z);}); }
+  var vv=[]; if(iftVentHasData()) [['Mode','mode'],['RR','rr'],['Vt','vt'],['PEEP','peep'],['FiO2','fio2'],['PIP','pip'],['pPlat','pplat'],['I:E','ie']].forEach(function(a){if(V[a[1]])vv.push(a[0]+' '+V[a[1]]);}); if(vv.length) lines.push('Vent: '+vv.join(' | '));
+  var gas=[]; [['pH','ph'],['PaCO2','paco2'],['HCO3','hco3'],['PaO2','pao2'],['BE','be'],['Lactate','lactate']].forEach(function(a){if(V[a[1]])gas.push(a[0]+' '+V[a[1]]);}); if(CS.vitals.spo2)gas.push('SpO2 '+CS.vitals.spo2+'%'); if(CS.vitals.etco2)gas.push('ETCO2 '+CS.vitals.etco2); if(gas.length) lines.push('Gas / respiratory: '+gas.join(' | '));
+  if(S.ino) lines.push('iNO: '+(S.inoPpm||'—')+' ppm'+(S.inoSystem?' | '+S.inoSystem:''));
+  if(S.ecmo) lines.push('ECMO: '+S.ecmoType+(S.ecmoFlow?' | flow '+S.ecmoFlow+' L/min':'')+(S.ecmoRpm?' | '+S.ecmoRpm+' RPM':'')+(S.ecmoSweep?' | sweep '+S.ecmoSweep+' L/min':'')+(S.ecmoFio2?' | FiO2 '+S.ecmoFio2+'%':'')+(S.ecmoAccess?' | access '+S.ecmoAccess:'')+(S.ecmoReturn?' | return '+S.ecmoReturn:''));
+  if(S.iabp) lines.push('IABP: '+S.iabpRatio+' | trigger '+S.iabpTrigger+(S.iabpAug?' | augmented '+S.iabpAug+' mmHg':'')+(S.iabpSize?' | '+S.iabpSize:'')+(S.iabpSite?' | '+S.iabpSite:''));
+  if(S.impella) lines.push('Impella: '+[S.impellaModel,S.impellaP,S.impellaFlow?('flow '+S.impellaFlow+' L/min'):'',S.impellaSize,S.impellaSite,S.impellaDepth].filter(Boolean).join(' | '));
+  var sh=[]; if(S.sheath1Size||S.sheath1Site)sh.push([S.sheath1Size,S.sheath1Site].filter(Boolean).join(' ')); if(S.sheath2Size||S.sheath2Site)sh.push([S.sheath2Size,S.sheath2Site].filter(Boolean).join(' ')); if(sh.length) lines.push('Sheaths/access: '+sh.join(' | '));
+  if(x.skin.sites.length||x.skin.finding||x.skin.note){var sk=[];if(x.skin.sites.length)sk.push(x.skin.sites.join(', '));if(x.skin.finding)sk.push(x.skin.finding);if(x.skin.stage)sk.push(x.skin.stage);if(x.skin.note)sk.push(x.skin.note);lines.push('Skin / injuries: '+sk.join(' | '));}
+  if(x.other) lines.push('Other transport items: '+x.other);
+  return lines.join('\n');
+}
+function iftRefreshPreview(){
+  var q=document.getElementById('iftPreview'); if(q) q.value=iftBrief();
+}
+function iftVentReviewHTML(){
+  var A=abgRead(), acts=ventActions(), any=iftVentHasData(), h=['<div class="iftventreview" id="iftVentReview">'];
+  if(!any){
+    h.push('<div class="reviewhead"><span class="reviewbadge">ready</span><div><b>Enter current vent settings, an ABG, or both.</b><span>The same fields feed the full Vent / ABG troubleshooter. Age + weight above set the comparison envelope automatically.</span></div></div>');
+  } else {
+    h.push('<div class="reviewhead"><span class="reviewbadge">review</span><div><b>'+esc(A.title)+'</b><span>'+esc(A.detail)+'</span></div></div>');
+    if(acts.length){h.push('<div class="actionstack">');acts.slice(0,4).forEach(function(a){h.push('<div class="actioncard k-'+a.k+'"><div class="atype">'+esc(a.type)+'</div><b>'+esc(a.title)+'</b><span>'+esc(a.detail)+'</span></div>');});h.push('</div>');}
+    else h.push('<div class="actionstack"><div class="actioncard k-air"><div class="atype">comparison</div><b>No specific warning generated from the entered values.</b><span>Open the full troubleshooter to compare all settings with the AIRLIFE starting envelope and build the approval request.</span></div></div>');
+  }
+  h.push('</div>'); return h.join('');
+}
+function iftRefreshVentReview(){
+  var q=document.getElementById('iftVentReview'); if(!q) return;
+  var wrap=document.createElement('div'); wrap.innerHTML=iftVentReviewHTML();
+  if(wrap.firstElementChild) q.replaceWith(wrap.firstElementChild);
+}
+function viewIFT(){
+  iftLoadDraft(); iftSeedPatient();
+  var x=IFT,S=x.support,V=CS.vent,start=ventStart(),h=[];
+  h.push('<datalist id="iftDrugList">'+iftDrugOptions()+'</datalist>');
+  h.push('<section class="ifthero"><div class="ey">Dispatch / interfacility transport</div><h1>Potential IFT patient → bedside → receiving bed.</h1><p>Start with what dispatch gives you, then add only what matters at bedside: contacts, patient context, active drips, ventilator + gas, support devices, sheaths and skin/injury findings. The same entries build a chart-ready snapshot. No patient name or MRN field is required.</p><div class="iftbar"><button class="cbtn go" type="button" data-iftcopy>Copy chart snapshot</button><button class="cbtn" type="button" data-iftsave>Save this draft</button><button class="cbtn" type="button" data-iftclear>Clear IFT patient</button>'+(x.savedAt?'<span class="saved">saved this session · '+esc(x.savedAt)+'</span>':'')+'</div></section>');
+  h.push('<div class="iftlayout">');
+  h.push('<section class="iftpanel full"><h2>1 · Dispatch essentials</h2><div class="subline">Enough to launch, call back and let the rest of the app calculate for the same patient.</div><div class="iftfields">');
+  [['Sending facility','sending.facility','hospital'],['Unit / room','sending.unit','ICU / ED'],['Callback phone','sending.phone','phone'],['Contact / RN','sending.contact','name / role'],['Sending physician','sending.physician','MD'],['Receiving facility','receiving.facility','facility'],['Receiving unit','receiving.unit','ICU / cath lab'],['Receiving phone','receiving.phone','phone'],['Accepting physician','receiving.physician','MD']].forEach(function(a){h.push('<label class="cf"><span>'+a[0]+'</span><input data-ift="'+a[1]+'" value="'+esc(iftGet(a[1]))+'" placeholder="'+a[2]+'"></label>');});
+  h.push('</div><div class="iftfields three"><label class="cf"><span>Diagnosis / reason for transfer</span><input data-ift="dx" value="'+esc(x.dx)+'" placeholder="shock, STEMI, ARDS, post-op..."></label><label class="cf"><span>Age</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="age" value="'+esc(x.age)+'" placeholder="—"><select data-ift="ageU"><option value="y"'+(x.ageU==='y'?' selected':'')+'>yr</option><option value="m"'+(x.ageU==='m'?' selected':'')+'>mo</option></select></div></label><label class="cf"><span>Weight</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="wt" value="'+esc(x.wt)+'" placeholder="—"><select data-ift="wtU"><option value="kg"'+(x.wtU==='kg'?' selected':'')+'>kg</option><option value="lb"'+(x.wtU==='lb'?' selected':'')+'>lb</option></select></div></label></div><label class="cf" style="display:block;margin-top:8px"><span>Other key sending-facility labs (optional)</span><input style="width:100%" data-ift="labs" value="'+esc(x.labs||'')+'" placeholder="Hgb 7.2, K 6.1, Cr 2.4 — only what changes transport"></label></section>');
+
+  h.push('<section class="iftpanel full"><div class="iftsectionhead"><div><h2>2 · Drips / medications</h2><div class="subline">Enter the sending-facility order exactly as reported. AIRLIFE active-PCG / formulary rates appear directly underneath for comparison.</div></div><button class="cbtn go" type="button" data-iftaddmed>+ Add drip</button></div>');
+  x.meds.forEach(function(m,i){h.push(iftMedRow(m,i));}); h.push('</section>');
+
+  h.push('<section class="iftpanel full"><div class="iftsectionhead"><div><h2>3 · Ventilator / gas troubleshooting</h2><div class="subline">Enter what the sending facility is actually using. Age + weight establish the comparison envelope; current pressures and gas values drive the troubleshooting review.</div></div><a class="cbtn go" href="#calc/vent">Full Vent / ABG</a></div><div class="iftstart">');
+  [['Mode',start.mode],['Rate',start.rr],['Vt',start.vtml||start.vt],['PEEP',start.peep],['I:E / Ti',start.ie],['Pressure',start.plat||start.pip]].forEach(function(z){h.push('<div class="setting"><small>'+z[0]+'</small><b>'+esc(z[1]||'—')+'</b></div>');});
+  h.push('</div><div class="iftrespgrid"><div class="iftrespbox"><h3>Current ventilator</h3><div class="subline">Settings and pressures from the sending ventilator.</div><div class="iftfields two">');
+  [['Mode','mode','text','A/C'],['RR','rr','number','/min'],['Vt','vt','number','mL'],['PEEP','peep','number','cmH2O'],['FiO2','fio2','number','%'],['PIP','pip','number','cmH2O'],['pPlat','pplat','number','cmH2O'],['I:E','ie','text','1:2']].forEach(function(a){h.push('<label class="cf"><span>'+a[0]+'</span><input type="'+a[2]+'" '+(a[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+a[1]+'" value="'+esc(iftVentValue(a[1]))+'" placeholder="'+esc(a[3])+'"></label>');});
+  h.push('</div></div><div class="iftrespbox"><h3>ABG / respiratory data</h3><div class="subline">One gas is enough to analyze; add pressures/settings when available.</div><div class="iftfields two">');
+  [['pH','vent.ph','7.35'],['PaCO₂','vent.paco2','40'],['HCO₃⁻','vent.hco3','24'],['PaO₂','vent.pao2','90'],['Base excess','vent.be','0'],['Lactate','vent.lactate','mmol/L'],['SpO₂','vitals.spo2','%'],['ETCO₂','vitals.etco2','mmHg']].forEach(function(a){var parts=a[1].split('.'),val=(parts[0]==='vent'?CS.vent[parts[1]]:CS.vitals[parts[1]])||'';h.push('<label class="cf"><span>'+a[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="'+a[1]+'" value="'+esc(val)+'" placeholder="'+esc(a[2])+'"></label>');});
+  h.push('</div></div></div>'+iftVentReviewHTML()+'<div class="iftlaunch"><a class="cbtn go" href="#calc/vent">Open full troubleshooter + approval brief</a><small>Entries carry forward automatically. The full page compares current settings with the AIRLIFE starting envelope and shows suggested review items without auto-ordering a change.</small></div></section>');
+
+
+  h.push('<section class="iftpanel"><h2>4 · Advanced support / access</h2><div class="subline">Keep this closed unless it applies. Tap the device and only its transport-critical fields appear.</div><div class="supporttiles">');
+  [['ino','Nitric oxide','ppm + delivery'],['ecmo','ECMO','type · flow · sweep'],['iabp','IABP','ratio · trigger · sheath'],['impella','Impella','model · P-level · flow']].forEach(function(a){h.push('<button class="supporttile'+(S[a[0]]?' on':'')+'" type="button" data-ifttoggle="'+a[0]+'"><b>'+a[1]+'</b><span>'+a[2]+'</span></button>');});
+  h.push('</div>'+iftSupportDetail()+'<div class="supportdetail"><h3>Other sheaths / large-bore access</h3><div class="iftfields two"><label class="cf"><span>Sheath 1</span><div class="cin"><input data-ift="support.sheath1Size" value="'+esc(S.sheath1Size)+'" placeholder="size / Fr"><input data-ift="support.sheath1Site" value="'+esc(S.sheath1Site)+'" placeholder="site"></div></label><label class="cf"><span>Sheath 2</span><div class="cin"><input data-ift="support.sheath2Size" value="'+esc(S.sheath2Size)+'" placeholder="size / Fr"><input data-ift="support.sheath2Site" value="'+esc(S.sheath2Site)+'" placeholder="site"></div></label></div></div></section>');
+
+  h.push('<section class="iftpanel full"><h2>5 · Skin / injuries</h2><div class="subline">Tap the site, choose the finding, add one short qualifier. Designed for pressure injuries, wounds and visible transport findings.</div><div class="iftbodywrap">'+iftBodySVG()+'<div><div class="iftfields two"><label class="cf"><span>Finding</span><select data-ift="skin.finding"><option value="">Choose…</option>'+['Pressure injury','Bruising','Abrasion','Laceration','Surgical incision','Burn','Other'].map(function(q){return '<option'+(x.skin.finding===q?' selected':'')+'>'+q+'</option>';}).join('')+'</select></label><label class="cf"><span>Stage / qualifier</span><select data-ift="skin.stage"><option value="">Optional…</option>'+['Stage 1','Stage 2','Stage 3','Stage 4','Deep tissue injury','Unstageable','Open','Closed','Draining','Dressed'].map(function(q){return '<option'+(x.skin.stage===q?' selected':'')+'>'+q+'</option>';}).join('')+'</select></label></div><label class="cf" style="display:block;margin-top:7px"><span>Short note</span><input style="width:100%" data-ift="skin.note" value="'+esc(x.skin.note)+'" placeholder="size, dressing, drainage, present on pickup..."></label><div class="skinsites">'+(x.skin.sites.length?x.skin.sites.map(function(z){return '<span class="skinsite">'+esc(z)+'</span>';}).join(''):'<span class="hint">No sites marked.</span>')+'</div></div></div></section>');
+
+  h.push('<section class="iftpanel"><h2>6 · Other transport items</h2><div class="subline">One place for anything that does not deserve another screen.</div><textarea style="width:100%;min-height:120px;margin-top:9px;border:1.5px solid var(--line2);border-radius:10px;background:var(--panel2);padding:10px;color:var(--ink)" data-ift="other" placeholder="Chest tubes, drains, pumps, restraints, isolation, blood products, special positioning, equipment coming with patient...">'+esc(x.other)+'</textarea></section>');
+  h.push('<section class="iftpanel"><h2>Chart snapshot</h2><div class="subline">Updates live from the fields above. Copy once at bedside or on arrival instead of retyping the same details.</div><textarea class="iftpreview" id="iftPreview" readonly>'+esc(iftBrief())+'</textarea><div class="calcrow"><button class="cbtn go" type="button" data-iftcopy>Copy snapshot</button><button class="cbtn" type="button" data-iftsave>Save draft</button></div><div class="iftprivacy"><b>Privacy:</b> this screen intentionally has no patient-name, DOB or MRN field. “Save draft” stores the worksheet only in this browser session until you clear it or the session ends.</div></section>');
+  h.push('</div>');
+  h.push('<div class="crit"><b>Clinical/reference boundary:</b> reported hospital settings and rates are documentation fields. Any AIRLIFE range shown beside them is a cross-check from the loaded active PCG/formulary, not permission to change an outside order. Verify the indication, concentration and applicable protocol before titration.</div>');
+  return h.join('');
+}
+
 /* ---------- router ---------- */
 function navFor(hash){
+  if(hash === 'ift') return 'ift';
   if(hash.indexOf('skills') === 0 || hash.indexOf('sk/') === 0) return 'skills';
   if(hash.indexOf('d/') === 0 || hash === 'doses') return 'doses';
   if(hash.indexOf('calc') === 0) return 'calc';
@@ -6310,7 +6816,8 @@ function qchipsHTML(){
 
 function render(){
   var hash = location.hash.replace(/^#/,''), html;
-  if(hash.indexOf('sk/') === 0){
+  if(hash === 'ift') html = viewIFT();
+  else if(hash.indexOf('sk/') === 0){
     var pr = hash.slice(3).split('/');
     html = viewSkill(pr[0], pr[1] || 0);
   }
@@ -6366,14 +6873,17 @@ window.addEventListener('hashchange', function(){
 
 function repaint(){
   var y = window.scrollY, act = document.activeElement, id = act ? act.id : null,
-      sel = (act && act.selectionStart != null) ? act.selectionStart : null;
+      sel = (act && act.selectionStart != null) ? act.selectionStart : null, sig = null;
+  if(act && !id && act.getAttribute){
+    if(act.getAttribute('data-cs')) sig='[data-cs=\"'+act.getAttribute('data-cs')+'\"]';
+    else if(act.getAttribute('data-ift')) sig='[data-ift=\"'+act.getAttribute('data-ift')+'\"]';
+    else if(act.getAttribute('data-iftmed')) sig='[data-iftmed=\"'+act.getAttribute('data-iftmed')+'\"][data-idx=\"'+act.getAttribute('data-idx')+'\"]';
+  }
   render();
-  if(id){
-    var back = document.getElementById(id);
-    if(back){
-      back.focus();
-      if(sel != null && back.setSelectionRange){ try{ back.setSelectionRange(sel, sel); }catch(e){} }
-    }
+  var back = id ? document.getElementById(id) : (sig ? document.querySelector(sig) : null);
+  if(back){
+    back.focus();
+    if(sel != null && back.setSelectionRange){ try{ back.setSelectionRange(sel, sel); }catch(e){} }
   }
   window.scrollTo(0, y);
 }
@@ -6405,6 +6915,20 @@ document.querySelectorAll('.unit button').forEach(function(b){
 document.addEventListener('click', function(e){
   var t = e.target;
 
+  if(t.closest && t.closest('[data-iftaddmed]')){ IFT.meds.push({drug:'',rate:'',unit:'mcg/min',amt:'',amtU:'mg',vol:'',volU:'mL',note:''}); repaint(); return; }
+  var irm=t.closest && t.closest('[data-iftremovemed]');
+  if(irm){ var ii=parseInt(irm.getAttribute('data-iftremovemed'),10); if(!isNaN(ii)){IFT.meds.splice(ii,1); if(!IFT.meds.length) IFT.meds.push({drug:'',rate:'',unit:'mcg/min',amt:'',amtU:'mg',vol:'',volU:'mL',note:''}); repaint();} return; }
+  var itg=t.closest && t.closest('[data-ifttoggle]');
+  if(itg){ var ik=itg.getAttribute('data-ifttoggle'); IFT.support[ik]=!IFT.support[ik]; repaint(); return; }
+  var isk=t.closest && t.closest('[data-iftskin]');
+  if(isk){ var site=isk.getAttribute('data-iftskin'), pos=IFT.skin.sites.indexOf(site); if(pos>-1) IFT.skin.sites.splice(pos,1); else IFT.skin.sites.push(site); repaint(); return; }
+  if(t.closest && t.closest('[data-iftsave]')){ iftSaveDraft(); repaint(); return; }
+  if(t.closest && t.closest('[data-iftclear]')){ iftReset(); repaint(); return; }
+  if(t.closest && t.closest('[data-iftcopy]')){
+    var brief=iftBrief(); try{ if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(brief); else {var q=document.getElementById('iftPreview');if(q){q.select();document.execCommand('copy');}} }catch(err){}
+    var b=t.closest('[data-iftcopy]'), old=b.textContent; b.textContent='Copied'; setTimeout(function(){if(b)b.textContent=old;},1200); return;
+  }
+
   var cr = t.closest && t.closest('[data-code-rhythm]');
   if(cr){ CODE.rhythm = cr.getAttribute('data-code-rhythm'); CODE.cycleAnchor = codeElapsed(); repaint(); return; }
   if(t.closest && t.closest('[data-code-start]')){
@@ -6430,8 +6954,9 @@ document.addEventListener('click', function(e){
 
   var chip = t.closest && t.closest('[data-chip]');
   if(chip){
-    var i = +chip.dataset.chip, at = PT.tags.indexOf(i);
-    if(at > -1) PT.tags.splice(at, 1); else PT.tags.push(i);
+    var i = +chip.dataset.chip, at = PT.tags.indexOf(i), qkind=qfChipKind(CHIPS[i]);
+    if(at > -1){ PT.tags.splice(at, 1); if(qkind && QFSTATE[qkind]===String(i)) QFSTATE[qkind]=''; }
+    else { PT.tags.push(i); if(qkind) QFSTATE[qkind]=String(i); }
     if(location.hash && location.hash !== '#'){ location.hash = ''; return; }
     var y = window.scrollY;
     render();
@@ -6482,6 +7007,18 @@ document.addEventListener('click', function(e){
   if(t.id === 'srchx'){ Q = ''; render(); var s = $('#srch'); if(s) s.focus(); return; }
   if(t.id === 'pttog'){ $('#pt').classList.toggle('mini'); repaint(); return; }
   if(t.id === 'themebtn'){ toggleTheme(); return; }
+  var rj = t.closest && t.closest('[data-rxjump]');
+  if(rj){ RXQ = rj.getAttribute('data-rxjump') || ''; location.hash='rx'; return; }
+  if(t.closest && t.closest('[data-copybrief]')){
+    var ta=document.getElementById('olmdBrief');
+    if(ta){
+      ta.select();
+      try{ navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(ta.value) : document.execCommand('copy'); }catch(err){ try{ document.execCommand('copy'); }catch(e2){} }
+      t.closest('[data-copybrief]').textContent='Copied';
+      setTimeout(function(){ var b=document.querySelector('[data-copybrief]'); if(b) b.textContent='Copy brief'; },1200);
+    }
+    return;
+  }
   if(t.closest && t.closest('[data-openall]')){
     OPENALL = !OPENALL;
     var yo = window.scrollY; render(); window.scrollTo(0, yo);
@@ -6497,6 +7034,7 @@ document.addEventListener('click', function(e){
   if(t.id === 'ptclear'){
     PT.age = PT.wt = PT.ht = PT.tbsa = null;
     PT.dx = ''; PT.tags = [];
+    QFSTATE = {presentation:'', mechanism:'', ob:'', section:'', drug:'', calc:''};
     $('#iDx').value = '';
     ['iAge','iWt','iHt'].forEach(function(id){
       var el = document.getElementById(id); el.value = ''; el.closest('.fld').classList.remove('on');
@@ -6512,39 +7050,59 @@ function csSet(path, val){
 }
 document.addEventListener('change', function(e){
 
+  var im=e.target.getAttribute&&e.target.getAttribute('data-iftmed');
+  if(im){ var ix=parseInt(e.target.getAttribute('data-idx'),10); if(!isNaN(ix)&&IFT.meds[ix]){IFT.meds[ix][im]=e.target.value; repaint();} return; }
+  var ip=e.target.getAttribute&&e.target.getAttribute('data-ift');
+  if(ip){iftSet(ip,e.target.value); if(ip==='ageU'||ip==='wtU'||ip==='age'||ip==='wt'||ip==='dx')iftSyncPatient(); repaint(); return;}
+
   if(e.target.hasAttribute && e.target.hasAttribute('data-code-track')){
     var ct = e.target.value; CODE.track = ct; CODE.route = ''; CODE.rhythm = codeDefaultRhythm(codeTrack()); CODE.shocks = 0; CODE.epiAt = null; CODE.cycleAnchor = codeElapsed();
     location.hash = ct === 'auto' ? 'code' : ('code/' + ct); return;
   }
   if(e.target.hasAttribute && e.target.hasAttribute('data-code-airway')){ CODE.airway = e.target.value; repaint(); return; }
-  if(e.target.hasAttribute && e.target.hasAttribute('data-qdrug') && e.target.value !== ''){ RXQ = FORM[+e.target.value] ? FORM[+e.target.value].n : ''; location.hash = 'rx'; return; }
-  if(e.target.hasAttribute && e.target.hasAttribute('data-qcalc') && e.target.value){ location.hash = 'calc/' + e.target.value; return; }
+  if(e.target.hasAttribute && e.target.hasAttribute('data-qdrug') && e.target.value !== ''){ QFSTATE.drug=e.target.value; RXQ = FORM[+e.target.value] ? FORM[+e.target.value].n : ''; location.hash = 'rx'; return; }
+  if(e.target.hasAttribute && e.target.hasAttribute('data-qcalc') && e.target.value){ QFSTATE.calc=e.target.value; location.hash = 'calc/' + e.target.value; return; }
 
   var qp = e.target.getAttribute && e.target.getAttribute('data-qpick');
   if(qp && e.target.tagName === 'SELECT'){
     var qi = parseInt(e.target.value, 10);
-    if(!isNaN(qi) && CHIPS[qi] && PT.tags.indexOf(qi) < 0) PT.tags.push(qi);
+    QFSTATE[qp]=isNaN(qi)?'':String(qi);
+    PT.tags = PT.tags.filter(function(ix){ return qfChipKind(CHIPS[ix]) !== qp; });
+    if(!isNaN(qi) && CHIPS[qi]) PT.tags.push(qi);
     if(location.hash && location.hash !== '#'){ location.hash = ''; return; }
     render();
     return;
   }
   if(e.target.hasAttribute && e.target.hasAttribute('data-qsection') && e.target.value){
+    QFSTATE.section=e.target.value;
     location.hash = 's/' + e.target.value;
     return;
   }
   var k = e.target.getAttribute && e.target.getAttribute('data-cs');
   if(k && e.target.tagName === 'SELECT'){
-    csSet(k, e.target.value);
+    csSet(k, e.target.value); if(location.hash==='#ift' && k.indexOf('vent.')===0) IFT.ventUsed=true;
     if(k === 'conc.drug'){
       var d = CONC[e.target.value];
       if(d){ CS.conc.c = String(d.v); CS.conc.cU = d.u; }
     }
-    repaint();
+    if(location.hash==='#ift'){iftRefreshPreview();iftRefreshVentReview();} else repaint();
   }
 });
 document.addEventListener('input', function(e){
+  var im=e.target.getAttribute&&e.target.getAttribute('data-iftmed');
+  if(im){var ix=parseInt(e.target.getAttribute('data-idx'),10);if(!isNaN(ix)&&IFT.meds[ix]){IFT.meds[ix][im]=e.target.value;iftRefreshPreview();}return;}
+  var ip=e.target.getAttribute&&e.target.getAttribute('data-ift');
+  if(ip && (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')){iftSet(ip,e.target.value); if(ip==='age'||ip==='wt'||ip==='dx'){iftSyncPatient(); var mm=document.getElementById('ptmeta');if(mm)mm.innerHTML=metaHTML();} iftRefreshPreview(); return;}
   var ck = e.target.getAttribute && e.target.getAttribute('data-cs');
-  if(ck && e.target.tagName === 'INPUT'){ csSet(ck, e.target.value); repaint(); return; }
+  if(ck && e.target.tagName === 'INPUT'){
+    csSet(ck, e.target.value);
+    if(location.hash==='#ift'){
+      if(ck.indexOf('vent.')===0) IFT.ventUsed=true;
+      iftRefreshPreview(); iftRefreshVentReview();
+      return;
+    }
+    repaint(); return;
+  }
   if(e.target.id === 'iDx'){
     PT.dx = e.target.value;
     if(location.hash && location.hash !== '#'){ location.hash = ''; }
@@ -6564,6 +7122,9 @@ document.addEventListener('keydown', function(e){
   var hash = location.hash.replace(/^#/,''), tag = document.activeElement.tagName;
   if(e.key === 'Enter' && e.target.id === 'aiq' && e.target.value.trim()){
     var v = e.target.value; e.target.value = ''; aiAsk(v); return;
+  }
+  if((e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('[data-iftskin]')){
+    e.preventDefault(); var st=e.target.closest('[data-iftskin]').getAttribute('data-iftskin'), pp=IFT.skin.sites.indexOf(st); if(pp>-1)IFT.skin.sites.splice(pp,1);else IFT.skin.sites.push(st);repaint();return;
   }
   if((e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('[data-bz]')){
     e.preventDefault();

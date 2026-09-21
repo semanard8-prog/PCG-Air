@@ -2,7 +2,7 @@
   "id": "/airlife-pcg/",
   "name": "AIRLIFE PCG \u2014 Clinical Flight Deck",
   "short_name": "AIRLIFE PCG",
-  "description": "Offline-first flight clinical reference with rapid protocol search, literal bag-to-pump infusion math, source-visible patient dosing, active ACLS/PALS/NRP cardiac-arrest companion, guided procedures, device rescue references and grounded AI assistance.",
+  "description": "Offline-first AIRLIFE clinical flight deck with interfacility preflight/chart snapshot, target-aware protocol ranking, literal bag-to-pump infusion math, source-visible patient dosing, active arrest companion, ventilator/ABG decision support, guided procedures and grounded AI assistance.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -56,10 +56,34 @@
       ]
     },
     {
+      "name": "Interfacility preflight",
+      "short_name": "IFT",
+      "description": "Capture sending contacts, drips, vent, support devices, sheaths and a chart-ready transport snapshot",
+      "url": "./index.html#ift",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
       "name": "Cardiac arrest companion",
       "short_name": "Code",
       "description": "Start CPR timing and age-appropriate arrest guidance",
       "url": "./index.html#code",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Ventilator / ABG deck",
+      "short_name": "Vent / ABG",
+      "description": "Compare AIRLIFE vent settings, interpret ABG and build an approval brief",
+      "url": "./index.html#calc/vent",
       "icons": [
         {
           "src": "icons/icon-192.png",

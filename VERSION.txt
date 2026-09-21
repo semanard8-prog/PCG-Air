@@ -1,0 +1,6 @@
+AIRLIFE PCG Clinical Flight Deck v10
+Expected header: Clinical Flight Deck · v10
+Expected top navigation: Case | Dispatch | Skills | Doses | Calc | Drugs | MCS | Ask | Flags
+Service worker cache: airlife-pcg-v10-dispatch-vent
+Deploy these files directly into the ROOT of the PCG-Air GitHub repository, replacing the existing index.html, manifest.webmanifest, and sw.js.
+Do NOT place them inside an AIRLIFE-PCG-FlightDeck-v10 subfolder if GitHub Pages is publishing from repository root.
