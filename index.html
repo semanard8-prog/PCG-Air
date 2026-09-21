@@ -522,6 +522,23 @@ tr.hi td:first-child{box-shadow:inset 4px 0 0 var(--dose)}
 .tab[aria-selected=true]{background:var(--k);border-color:var(--k);color:#fff;font-weight:700}
 :root[data-theme="dark"] .tab[aria-selected=true]{color:#08141A}
 
+
+/* ================= flight deck / premium shell ================= */
+.brandbar{background:linear-gradient(105deg,#071D2A 0%,#0B3446 55%,#0B5260 100%);color:#fff;border-bottom:1px solid #ffffff18}
+.brandin{max-width:900px;margin:0 auto;padding:8px 13px;display:flex;align-items:center;gap:10px;min-height:46px}
+.brandmark{width:31px;height:31px;border-radius:10px;background:linear-gradient(135deg,#55E1D0,#52A7FF);display:grid;place-items:center;color:#071D2A;font:800 17px/1 "Barlow Condensed";box-shadow:0 6px 18px #0004}
+.brandtxt{min-width:0;flex:1}.brandtxt b{display:block;font:700 15px/1 "Barlow Condensed";letter-spacing:.08em}.brandtxt span{display:block;margin-top:3px;font:500 10px/1 Barlow;letter-spacing:.13em;text-transform:uppercase;color:#B9D4DE}
+.flightstatus{display:flex;align-items:center;gap:6px;font:700 9.5px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:#CDE9E6;border:1px solid #ffffff2f;background:#ffffff0d;border-radius:20px;padding:7px 9px;white-space:nowrap}
+.flightstatus i{width:7px;height:7px;border-radius:50%;background:#5CE0A3;box-shadow:0 0 0 3px #5CE0A326}.flightstatus.off i{background:#FFBE4D;box-shadow:0 0 0 3px #FFBE4D26}
+.deckhero{position:relative;overflow:hidden;margin:14px 0 12px;padding:19px 17px;border-radius:16px;color:#fff;background:linear-gradient(120deg,#082331 0%,#0A4053 52%,#0D6D68 120%);box-shadow:0 18px 38px -24px #071d2abf}
+.deckhero:after{content:"";position:absolute;right:-44px;top:-60px;width:190px;height:190px;border-radius:50%;border:32px solid #ffffff0b;box-shadow:0 0 0 28px #ffffff08}
+.deckeyebrow{font:700 10px/1 Barlow;letter-spacing:.16em;text-transform:uppercase;color:#8FE8DD}.deckhero h1{position:relative;z-index:1;font-size:30px;margin-top:7px}.deckhero p{position:relative;z-index:1;margin:7px 0 0;max-width:600px;font:500 13.5px/1.45 Barlow;color:#D5E9ED}
+.deckactions{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:14px}.deckaction{display:flex;flex-direction:column;gap:5px;min-height:72px;padding:11px;border-radius:11px;border:1px solid #ffffff26;background:#ffffff10;color:#fff;text-align:left;backdrop-filter:blur(4px)}.deckaction:hover{background:#ffffff19;border-color:#ffffff45}.deckaction b{font:700 14px/1.1 Barlow}.deckaction span{font:500 10.5px/1.25 Barlow;color:#BFD7DF}.deckaction i{font:400 19px/1 Barlow;font-style:normal;color:#78E6DB}
+.smartrow{display:grid;grid-template-columns:1.2fr .8fr;gap:8px;margin-top:10px}.smartcard{border:1.5px solid var(--line);background:var(--panel);border-radius:var(--rad);padding:14px;box-shadow:var(--shadow)}.smartcard h3{font-size:16px}.smartcard p{margin:6px 0 0;font:500 12.5px/1.4 Barlow;color:var(--dim)}
+.aistatus{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}.aimode{display:inline-flex;align-items:center;gap:7px;border-radius:20px;padding:7px 10px;font:700 10px/1 Barlow;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--line2);background:var(--panel)}.aimode i{width:7px;height:7px;border-radius:50%;background:var(--ok)}.aimode.local i{background:var(--warn)}.aicontext{font:600 11.5px/1.2 Barlow;color:var(--dim)}
+.offlineanswer{border-left:4px solid var(--warn)!important;background:var(--warnBg)!important}.retrieval{margin-top:10px;display:grid;gap:7px}.retrieval a{display:block;border:1px solid var(--line2);background:var(--panel2);border-radius:8px;padding:10px 11px;color:var(--ink)}.retrieval a b{display:block;font:700 13.5px/1.25 Barlow}.retrieval a span{display:block;margin-top:4px;font:500 11.5px/1.35 Barlow;color:var(--dim)}
+@media(max-width:620px){.deckactions{grid-template-columns:repeat(2,1fr)}.smartrow{grid-template-columns:1fr}.brandtxt span{display:none}.brandin{padding:7px 11px}.deckhero{padding:17px 14px}.deckhero h1{font-size:26px}}
+
 /* ================= assistant ================= */
 .chatwrap{margin-top:14px;display:flex;flex-direction:column;gap:9px}
 .msg{border-radius:var(--rad);padding:13px 15px;font-size:15px;line-height:1.58;max-width:94%}
@@ -590,6 +607,11 @@ tr.hi td:first-child{box-shadow:inset 4px 0 0 var(--dose)}
 </head>
 <body>
 <div id="top">
+<div class="brandbar"><div class="brandin">
+  <div class="brandmark" aria-hidden="true">A</div>
+  <div class="brandtxt"><b>AIRLIFE PCG</b><span>Clinical Flight Deck</span></div>
+  <div class="flightstatus" id="flightstatus"><i></i><span id="flightstatustxt">Offline ready</span></div>
+</div></div>
 <header id="pt">
   <div class="ptin">
     <div class="ptrow">
@@ -4474,15 +4496,49 @@ function aiCall(userText){
     });
 }
 
+
+function aiLocalMatches(q){
+  var out = [], seen = {};
+  search(q).slice(0,6).forEach(function(r){
+    if(seen[r.p.id]) return; seen[r.p.id] = 1;
+    out.push({id:r.p.id, title:r.p.t, meta:SEC[r.p.s].t + ' · source p.' + r.p.pg});
+  });
+  if(!out.length){
+    var lex = (function(){ var save = PT.dx; PT.dx = q; var r = lexHits(); PT.dx = save; return r; })();
+    Object.keys(lex).sort(function(a,b){return lex[b]-lex[a];}).slice(0,5).forEach(function(id){
+      var p = BY[id]; if(p && !seen[id]) out.push({id:id,title:p.t,meta:SEC[p.s].t + ' · source p.' + p.pg});
+    });
+  }
+  return out;
+}
+
+function aiLocalAnswer(q){
+  var m = aiLocalMatches(q), txt = 'OFFLINE REFERENCE MODE\n';
+  if(!m.length) return txt + '\nI could not find a close match in the loaded guideline index. Try a drug name, procedure, diagnosis, device, or PCG number. No clinical answer was generated.';
+  txt += '\nI cannot run the cloud reasoning model without a connection, so I am not generating a new clinical recommendation. The closest loaded references are:\n\n';
+  m.forEach(function(x,i){ txt += (i+1) + '. PCG ' + x.id + ' — ' + x.title + ' (' + x.meta + ')\n'; });
+  txt += '\nOpen the cited PCG(s) for the source text. When connectivity returns, ask the same question again for a grounded synthesis.';
+  return txt;
+}
+
 function aiAsk(q){
   if(!q.trim() || AI.busy) return;
   AI.msgs.push({role:'user', content:q});
   AI.busy = true; AI.err = '';
   render();
+  if(!navigator.onLine){
+    AI.mode = 'local';
+    AI.msgs.push({role:'assistant', content: aiLocalAnswer(q), local:true});
+    AI.busy = false; render();
+    return;
+  }
+  AI.mode = 'cloud';
   aiCall(q).then(function(txt){
     AI.msgs.push({role:'assistant', content: txt || '(empty response)'});
   }).catch(function(e){
     AI.err = String(e.message || e);
+    AI.msgs.push({role:'assistant', content: aiLocalAnswer(q), local:true});
+    AI.mode = 'local';
   }).then(function(){
     AI.busy = false;
     render();
@@ -4517,12 +4573,12 @@ var AI_SUGGEST = [
 ];
 
 function viewAI(){
-  var h = ['<div class="phead k-sed"><span class="pn">✦</span><h1>Ask the Guidelines<small>Answers drawn only from the protocols loaded in this app</small></h1></div>'];
+  var h = ['<div class="phead k-sed"><span class="pn">✦</span><h1>PCG Assist<small>Grounded reasoning online · protocol retrieval offline</small></h1></div>'];
   h.push('<div class="kbar k-sed"></div>');
+  var online = navigator.onLine;
+  h.push('<div class="aistatus"><span class="aimode ' + (online ? '' : 'local') + '"><i></i>' + (online ? 'Online reasoning' : 'Offline retrieval') + '</span><span class="aicontext">' + esc(aiPatient()) + '</span></div>');
 
-  h.push('<div class="note k-sed">This retrieves the relevant guideline text and asks Claude to answer <b>from that text ' +
-    'only</b>, citing the PCG number. It will tell you when the guidelines do not cover something rather than filling ' +
-    'the gap. It is still a language model reading a document — verify any dose against the guideline page before you push it.</div>');
+  h.push('<div class="note k-sed"><b>Clinical source stays in control.</b> Online, PCG Assist retrieves relevant loaded guideline text and asks the model to synthesize only from those excerpts with PCG citations. Offline, it never invents an answer — it surfaces the closest cached references so the source remains usable at altitude or out of coverage.</div>');
 
   if(!AI.msgs.length){
     h.push('<div class="cgrp"><div class="cglab">Try</div><div class="chips">' +
@@ -4532,9 +4588,9 @@ function viewAI(){
 
   h.push('<div class="chatwrap">');
   AI.msgs.forEach(function(m){
-    h.push('<div class="msg ' + m.role + '">' + (m.role === 'user' ? '<p>' + esc(m.content) + '</p>' : mdLite(m.content)) + '</div>');
+    h.push('<div class="msg ' + m.role + (m.local ? ' offlineanswer' : '') + '">' + (m.role === 'user' ? '<p>' + esc(m.content) + '</p>' : mdLite(m.content)) + '</div>');
   });
-  if(AI.busy) h.push('<div class="msg assistant busy"><span class="dots"><i></i><i></i><i></i></span>Reading the guidelines…</div>');
+  if(AI.busy) h.push('<div class="msg assistant busy"><span class="dots"><i></i><i></i><i></i></span>Retrieving the relevant PCGs…</div>');
   h.push('</div>');
 
   if(AI.err){
@@ -4542,7 +4598,7 @@ function viewAI(){
     h.push(aiKeyPanel(true));
   }
 
-  h.push('<div class="askbar"><input id="aiq" type="text" autocomplete="off" placeholder="Ask about a dose, a protocol, a device…" ' +
+  h.push('<div class="askbar"><input id="aiq" type="text" autocomplete="off" placeholder="Ask a complex PCG question…" ' +
     (AI.busy ? 'disabled' : '') + '><button class="asksend" id="aisend" type="button"' + (AI.busy ? ' disabled' : '') + '>Ask</button></div>');
 
   if(AI.msgs.length) h.push('<div class="calcrow"><button class="cbtn" type="button" data-aiclear="1">Clear conversation</button></div>');
@@ -4561,7 +4617,7 @@ function aiKeyPanel(compact){
       'Anyone with the unlocked phone can read it, so use a key scoped to this and rotate it if the device is lost. ' +
       'The more durable pattern is a small Cloudflare Worker that holds the key server-side and proxies the call — ' +
       'then the phone never carries a secret.</div>');
-    h.push('<div class="note k-warn"><b>Offline.</b> This is the one screen that needs a signal. Everything else in the ' +
+    h.push('<div class="note k-warn"><b>Offline.</b> Grounded AI synthesis needs a signal, but this screen now falls back to local protocol retrieval. Everything else in the ' +
       'app — protocols, doses, skills, calculators, device pages — works with the radio off.</div>');
   }
   h.push('<label class="cf" style="margin-top:10px"><span>Anthropic API key</span>' +
@@ -5434,8 +5490,23 @@ function caseHTML(){
   return h.join('');
 }
 
+function deckHero(){
+  if(hasCase()) return '';
+  return '<section class="deckhero">' +
+    '<div class="deckeyebrow">Clinical Flight Deck · Offline First</div>' +
+    '<h1>One screen from scene to receiving bed.</h1>' +
+    '<p>Build the patient once, then let the app surface the right guideline, calculated doses, procedures and device references. Complex question? Ask the loaded guidelines with citations.</p>' +
+    '<div class="deckactions">' +
+      '<button class="deckaction" type="button" data-focus="iDx"><i>⌖</i><b>Build a case</b><span>Presentation + patient context</span></button>' +
+      '<a class="deckaction" href="#ask"><i>✦</i><b>Ask PCG</b><span>Grounded AI + offline retrieval</span></a>' +
+      '<a class="deckaction" href="#doses"><i>≡</i><b>Critical doses</b><span>Weight-resolved reference</span></a>' +
+      '<a class="deckaction" href="#mcs"><i>⊙</i><b>Device rescue</b><span>Impella · IABP · ECMO</span></a>' +
+    '</div></section>';
+}
+
 function viewHome(){
   var h = [];
+  h.push(deckHero());
   h.push('<div class="srchwrap"><input id="srch" type="search" autocomplete="off" spellcheck="false" ' +
     'placeholder="Search anything — protocol, drug, skill, PCG number…" value="' + esc(Q) + '">' +
     (Q ? '<button class="xbtn" id="srchx" type="button" aria-label="Clear">×</button>' : '') + '</div>');
@@ -6181,7 +6252,13 @@ render();
 
 (function(){
   var net = document.getElementById('netbadge');
-  function paintNet(){ net.classList.toggle('on', !navigator.onLine); }
+  function paintNet(){
+    var off = !navigator.onLine;
+    net.classList.toggle('on', off);
+    var fs = document.getElementById('flightstatus'), ft = document.getElementById('flightstatustxt');
+    if(fs) fs.classList.toggle('off', off);
+    if(ft) ft.textContent = off ? 'Offline · cached' : 'Online · offline ready';
+  }
   window.addEventListener('online', paintNet); window.addEventListener('offline', paintNet); paintNet();
   var deferred = null, btn = document.getElementById('pwabtn');
   window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; btn.classList.add('on'); });

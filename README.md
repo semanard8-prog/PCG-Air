@@ -110,3 +110,31 @@ asking. Verify the build against the printed PCGs before anyone flies with it.
 
 *Reference tool — not a substitute for the printed Patient Care Guidelines,
 clinical judgment, or On-Line Medical Direction.*
+
+---
+
+## Flight Deck UX update — v5
+
+This revision keeps the existing clinical content and calculation engine intact while upgrading the product shell:
+
+- **Clinical Flight Deck** brand header and fast home-screen entry points for Case, PCG Assist, Doses, and MCS/device rescue.
+- **PCG Assist status** explicitly shows whether the app is using online grounded reasoning or offline cached retrieval.
+- **Offline assistant fallback** never fabricates a synthesized answer without the cloud model. It returns the closest cached PCG references for the clinician to open directly.
+- **Connectivity status** is visible in the app chrome in addition to the existing offline badge.
+- **PWA shortcuts** now expose Case, PCG Assist, Critical Doses, and Device Rescue from the launcher.
+- Service-worker cache bumped to `airlife-pcg-v5-flightdeck` so installed copies discover the update.
+
+### Important clinical-content note
+
+This UX update does **not** claim that the embedded guideline transcription has been reconciled line-by-line against every PDF in the supplied 2024 protocol pack. Treat source ingestion/version reconciliation as a separate controlled clinical-content release, with medical-director/clinical-review sign-off before operational deployment.
+
+### Recommended next product phases
+
+1. **Versioned source library** — Adult, Pediatric, HROB/OB, SOG, and later provider-specific protocol packs with effective dates and superseded-version handling.
+2. **Provider profiles** — same app shell, but branded/signed protocol bundles per flight program; shared calculators and skills where appropriate.
+3. **Change-review workflow** — import a new PDF pack, show section-by-section diffs, require clinical approval, then publish an immutable signed release.
+4. **Secure AI proxy** — keep API keys off crew devices; retrieve only approved protocol chunks; log no PHI by default.
+5. **Offline semantic index** — local synonym-aware search and question-to-PCG retrieval even with no data connection.
+6. **Crew favorites / flight mode** — pin commonly used pages, one-handed large-target mode, night-flight palette, and optional glove-friendly controls.
+7. **Training mode** — case simulations, protocol drills, skills checklists, and debrief questions clearly separated from live-reference mode.
+8. **Operational integrations** — controlled links to dispatch/transfer-center workflows, aircraft/device checklists, contact directories, and hospital capability references without mixing them into clinical standing orders.

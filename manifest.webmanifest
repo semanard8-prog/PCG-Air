@@ -1,45 +1,95 @@
 {
   "id": "/airlife-pcg/",
-  "name": "AIRLIFE PCG — Flight Reference",
+  "name": "AIRLIFE PCG \u2014 Clinical Flight Deck",
   "short_name": "AIRLIFE PCG",
-  "description": "HCA Houston Healthcare AIRLIFE Patient Care Guidelines — case-driven protocol, dosing and procedure reference for flight crews. Runs fully offline.",
+  "description": "Offline-first clinical flight reference with case-driven protocols, weight-resolved dosing, guided procedures, device rescue references and grounded AI assistance.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "minimal-ui"
+  ],
   "orientation": "any",
   "background_color": "#EEF3F6",
   "theme_color": "#FFFFFF",
-  "categories": ["medical", "productivity", "utilities"],
+  "categories": [
+    "medical",
+    "productivity",
+    "utilities"
+  ],
   "lang": "en-US",
   "dir": "ltr",
   "prefer_related_applications": false,
   "icons": [
-    { "src": "icons/icon-192.png",           "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png",           "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png",  "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "shortcuts": [
     {
-      "name": "Guided skills",
-      "short_name": "Skills",
-      "description": "RSI, thoracostomy, IO and cricothyrotomy, stepped and animated",
-      "url": "./index.html#skills",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "name": "Build a case",
+      "short_name": "Case",
+      "description": "Start with patient context and presentation",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
-      "name": "Doses by problem",
+      "name": "PCG Assist",
+      "short_name": "Ask",
+      "description": "Grounded guideline assistant with offline retrieval fallback",
+      "url": "./index.html#ask",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Critical doses",
       "short_name": "Doses",
-      "description": "Pick the problem, get the medications with the numbers filled in",
+      "description": "Problem-based, weight-resolved dosing",
       "url": "./index.html#doses",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
-      "name": "Drug formulary",
-      "short_name": "Drugs",
-      "description": "Rev 2024.04 formulary, weight-resolved",
-      "url": "./index.html#rx",
-      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+      "name": "Device rescue",
+      "short_name": "Devices",
+      "description": "Impella, IABP and ECMO flight references",
+      "url": "./index.html#mcs",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
