@@ -2,7 +2,7 @@
   "id": "/airlife-pcg/",
   "name": "AIRLIFE PCG \u2014 Clinical Flight Deck",
   "short_name": "AIRLIFE PCG",
-  "description": "Offline-first clinical flight reference with case-driven protocols, weight-resolved dosing, guided procedures, device rescue references and grounded AI assistance.",
+  "description": "Offline-first flight clinical reference with rapid protocol search, literal bag-to-pump infusion math, source-visible patient dosing, active ACLS/PALS/NRP cardiac-arrest companion, guided procedures, device rescue references and grounded AI assistance.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -12,8 +12,8 @@
     "minimal-ui"
   ],
   "orientation": "any",
-  "background_color": "#EEF3F6",
-  "theme_color": "#FFFFFF",
+  "background_color": "#E7F0F4",
+  "theme_color": "#0B3446",
   "categories": [
     "medical",
     "productivity",
@@ -56,34 +56,34 @@
       ]
     },
     {
+      "name": "Cardiac arrest companion",
+      "short_name": "Code",
+      "description": "Start CPR timing and age-appropriate arrest guidance",
+      "url": "./index.html#code",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Bag / infusion calculator",
+      "short_name": "Bag Math",
+      "description": "Enter what is in the bag and convert the ordered dose to a pump rate",
+      "url": "./index.html#calc/inf",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
       "name": "PCG Assist",
       "short_name": "Ask",
       "description": "Grounded guideline assistant with offline retrieval fallback",
       "url": "./index.html#ask",
-      "icons": [
-        {
-          "src": "icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Critical doses",
-      "short_name": "Doses",
-      "description": "Problem-based, weight-resolved dosing",
-      "url": "./index.html#doses",
-      "icons": [
-        {
-          "src": "icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Device rescue",
-      "short_name": "Devices",
-      "description": "Impella, IABP and ECMO flight references",
-      "url": "./index.html#mcs",
       "icons": [
         {
           "src": "icons/icon-192.png",
