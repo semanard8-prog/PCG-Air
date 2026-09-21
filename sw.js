@@ -5,7 +5,7 @@
    Bump CACHE on every deploy so phones pick the new build up.
    ============================================================ */
 
-var CACHE = 'airlife-pcg-v10-dispatch-vent';
+var CACHE = 'airlife-pcg-v10.2-ift-quick-20260920';
 var FONTS = 'airlife-fonts-v1';
 
 var SHELL = [
@@ -70,7 +70,7 @@ self.addEventListener('fetch', function(e){
      hash routes never hit the network, but a cold launch might. */
   if(req.mode === 'navigate'){
     e.respondWith(
-      fetch(req).then(function(res){
+      fetch(req, {cache:'no-store'}).then(function(res){
         var copy = res.clone();
         caches.open(CACHE).then(function(c){ c.put('./index.html', copy); });
         return res;

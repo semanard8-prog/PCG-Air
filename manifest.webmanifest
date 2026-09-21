@@ -1,8 +1,8 @@
 {
   "id": "/airlife-pcg/",
-  "name": "AIRLIFE PCG \u2014 Clinical Flight Deck",
+  "name": "AIRLIFE PCG — Clinical Flight Deck",
   "short_name": "AIRLIFE PCG",
-  "description": "Offline-first AIRLIFE clinical flight deck with interfacility preflight/chart snapshot, target-aware protocol ranking, literal bag-to-pump infusion math, source-visible patient dosing, active arrest companion, ventilator/ABG decision support, guided procedures and grounded AI assistance.",
+  "description": "Offline-first AIRLIFE clinical flight deck with fast IFT preflight, common transfer premix shortcuts, Hamilton T1-first ventilator capture, target-aware protocol ranking, bag-to-pump math, source-visible dosing, arrest companion, ventilator/ABG decision support and grounded AI assistance.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

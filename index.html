@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="airlife-build" content="v10.2-ift-quick-20260920">
 <title>AIRLIFE PCG — Clinical Flight Deck</title>
 <meta name="description" content="HCA Houston Healthcare AIRLIFE Patient Care Guidelines — case-driven protocol, dosing, calculator and procedure reference. Runs fully offline.">
 <meta name="theme-color" content="#0B3446">
@@ -759,7 +760,13 @@ body{
 .iftlayout{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.iftpanel{border:1.5px solid var(--line);border-radius:13px;background:rgba(255,255,255,.92);padding:13px;box-shadow:var(--shadow);min-width:0}.iftpanel.full{grid-column:1/-1}.iftpanel h2{font-size:18px}.iftpanel .subline{margin-top:4px;font:500 11.5px/1.4 Barlow;color:var(--dim)}
 .iftfields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:10px}.iftfields.three{grid-template-columns:repeat(3,minmax(0,1fr))}.iftfields.two{grid-template-columns:repeat(2,minmax(0,1fr))}.iftfields .cf input,.iftfields .cf select,.iftfields textarea{min-height:42px;padding:9px 10px}.iftfields textarea{width:100%;border:1.5px solid var(--line2);border-radius:9px;background:var(--panel);color:var(--ink);font:500 13px/1.4 Barlow;resize:vertical}
 .iftsectionhead{display:flex;align-items:center;gap:10px}.iftsectionhead>div{flex:1}.iftsectionhead .cbtn{min-height:37px;padding:9px 12px}
-.iftmed{border:1.5px solid var(--line);border-left:4px solid var(--c-med);border-radius:0 11px 11px 0;background:var(--panel);padding:10px;margin-top:8px}.iftmedtop{display:grid;grid-template-columns:minmax(170px,1.55fr) minmax(80px,.55fr) minmax(120px,.85fr) auto;gap:6px;align-items:end}.iftmedtop label span,.iftmix label span{display:block;font:800 8.5px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 4px 2px}.iftmedtop input,.iftmedtop select,.iftmix input,.iftmix select{width:100%;min-height:39px;border:1.5px solid var(--line2);border-radius:8px;background:var(--panel2);padding:8px 9px;font:600 12.5px/1.2 Barlow;color:var(--ink)}.iftremove{width:38px;height:39px;border:1.5px solid var(--line2);border-radius:8px;color:var(--crit);font-size:18px;background:var(--critBg)}
+.iftmed{border:1.5px solid var(--line);border-left:4px solid var(--c-med);border-radius:0 11px 11px 0;background:var(--panel);padding:10px;margin-top:8px}
+.iftmed.hasdrug{border-color:color-mix(in srgb,var(--dose) 38%,var(--line));border-left-color:var(--dose);background:linear-gradient(115deg,color-mix(in srgb,var(--dose) 7%,var(--panel)),var(--panel));box-shadow:0 0 0 2px color-mix(in srgb,var(--dose) 5%,transparent),var(--shadow)}.iftmed.hasdrug .iftmedtop>label:first-child span{color:var(--dose)}.iftadded{display:inline-flex;align-items:center;gap:4px;margin-left:6px;padding:3px 6px;border-radius:20px;background:var(--dose);color:#fff;font:800 8px/1 Barlow;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+.iftmixquick{display:flex;align-items:flex-start;gap:7px;flex-wrap:wrap;margin-top:7px;padding:8px 9px;border:1px solid color-mix(in srgb,var(--c-air) 28%,var(--line));border-radius:9px;background:color-mix(in srgb,var(--c-air) 5%,var(--panel))}.iftmixquick>div:first-child{flex:0 0 145px}.iftmixquick b{display:block;font:800 9px/1.2 Barlow;letter-spacing:.08em;text-transform:uppercase;color:var(--c-air)}.iftmixquick small{display:block;margin-top:3px;font:500 9px/1.3 Barlow;color:var(--dim)}.mixchips{display:flex;gap:5px;flex:1;flex-wrap:wrap}.mixchip{border:1.5px solid color-mix(in srgb,var(--c-air) 36%,var(--line));border-radius:8px;background:var(--panel);padding:7px 9px;font:700 11px/1.15 Barlow;color:var(--ink2);min-height:34px}.mixchip:hover{border-color:var(--c-air);color:var(--c-air)}.mixchip.on{background:var(--c-air);border-color:var(--c-air);color:#fff}.mixconc{font:600 9px/1.2 Barlow;opacity:.82;display:block;margin-top:2px}
+.iftlegend{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:9px;padding:8px 10px;border:1px solid color-mix(in srgb,var(--dose) 26%,var(--line));border-radius:9px;background:color-mix(in srgb,var(--dose) 4%,var(--panel));font:500 10.5px/1.35 Barlow;color:var(--dim)}.impactkey{display:inline-flex;align-items:center;gap:5px;color:var(--dose);font-weight:700}.impactkey i{width:9px;height:9px;border-radius:50%;background:var(--dose);box-shadow:0 0 0 3px var(--doseBg)}
+.cf.impact>span:first-child::after,.iftmed label.impact>span:first-child::after{content:'CALC';display:inline-block;margin-left:5px;padding:2px 4px;border-radius:10px;background:var(--doseBg);color:var(--dose);font:800 7px/1 Barlow;letter-spacing:.07em;vertical-align:1px}.cf.impact input,.cf.impact select,.iftmed label.impact input,.iftmed label.impact select{border-color:color-mix(in srgb,var(--dose) 48%,var(--line2));background:linear-gradient(180deg,var(--panel),color-mix(in srgb,var(--dose) 4%,var(--panel)))}.cf.impact.missing input,.cf.impact.missing select{border-color:var(--warn);background:var(--warnBg);box-shadow:0 0 0 2px color-mix(in srgb,var(--warn) 8%,transparent)}.cf.impact.missing>span:first-child::after{content:'CALC · ADD';background:var(--warnBg);color:var(--warn)}
+.ventprofilebar{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px;padding:9px;border:1px solid color-mix(in srgb,var(--c-air) 30%,var(--line));border-radius:10px;background:color-mix(in srgb,var(--c-air) 4%,var(--panel))}.ventprofilebar .cf select{min-height:42px}.t1note{grid-column:1/-1;font:500 10px/1.35 Barlow;color:var(--dim)}.t1note b{color:var(--c-air)}
+@media(max-width:560px){.ventprofilebar{grid-template-columns:1fr}.iftmixquick>div:first-child{flex-basis:100%}}.iftmedtop{display:grid;grid-template-columns:minmax(170px,1.55fr) minmax(80px,.55fr) minmax(120px,.85fr) auto;gap:6px;align-items:end}.iftmedtop label span,.iftmix label span{display:block;font:800 8.5px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 4px 2px}.iftmedtop input,.iftmedtop select,.iftmix input,.iftmix select{width:100%;min-height:39px;border:1.5px solid var(--line2);border-radius:8px;background:var(--panel2);padding:8px 9px;font:600 12.5px/1.2 Barlow;color:var(--ink)}.iftremove{width:38px;height:39px;border:1.5px solid var(--line2);border-radius:8px;color:var(--crit);font-size:18px;background:var(--critBg)}
 .iftref{margin-top:7px;padding:8px 9px;border-radius:8px;background:linear-gradient(110deg,var(--doseBg),var(--panel2));border:1px solid color-mix(in srgb,var(--dose) 30%,var(--line));font:500 11px/1.42 Barlow;color:var(--ink2)}.iftref b{color:var(--dose)}.iftref .refrow{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:4px}.iftref .refrow strong{font:700 12px/1.3 Barlow;color:var(--ink)}.iftref .refrow em{font-style:normal;color:var(--dim)}
 .iftmix{display:grid;grid-template-columns:1fr .8fr 1fr .8fr 1.4fr;gap:6px;margin-top:7px;padding-top:7px;border-top:1px dashed var(--line2)}
 .iftstart{display:flex;gap:6px;overflow-x:auto;margin-top:8px;padding-bottom:2px;scrollbar-width:none}.iftstart::-webkit-scrollbar{display:none}.iftstart .setting{flex:0 0 128px;padding:8px}.iftstart .setting b{font-size:16px}
@@ -784,7 +791,7 @@ body{
 <div id="top">
 <div class="brandbar"><div class="brandin">
   <div class="brandmark" aria-hidden="true">A</div>
-  <div class="brandtxt"><b>AIRLIFE PCG</b><span>Clinical Flight Deck · v10</span></div>
+  <div class="brandtxt"><b>AIRLIFE PCG</b><span>Clinical Flight Deck · v10.2</span></div>
   <div class="flightstatus" id="flightstatus"><i></i><span id="flightstatustxt">Offline ready</span></div>
 </div></div>
 <header id="pt">
@@ -4073,8 +4080,25 @@ var CS = {
   inf:{drug:'', rate:'', rateU:'mcg/kg/min', amt:'', amtU:'mg', vol:'250', volU:'mL'},
   drip:{vol:'', min:'', set:'10'},
   vitals:{sbp:'', dbp:'', hr:'', rr:'', spo2:'', etco2:''},
-  vent:{profile:'auto', mode:'A/C', rr:'', vt:'', peep:'', fio2:'100', pip:'', pplat:'', ie:'', ph:'', paco2:'', hco3:'', pao2:'', be:'', lactate:''}
+  vent:{profile:'auto', device:'Hamilton T1', mode:'', rr:'', vt:'', peep:'', fio2:'100', pip:'', pplat:'', ie:'', ph:'', paco2:'', hco3:'', pao2:'', be:'', lactate:''}
 };
+
+/* ---------- ventilator UI profile ---------- */
+var HAMILTON_T1_MODES = [
+  'APVcmv / (S)CMV+','APVsimv / SIMV+','PCV+','PSIMV+','DuoPAP','APRV','SPONT','ASV','NIV','NIV-ST','nCPAP','nCPAP-PC','HiFlowO2'
+];
+var GENERIC_VENT_MODES = ['A/C (as reported)','VC/AC','PC/AC','PRVC','SIMV','PSV / CPAP','Other / not listed'];
+function ventDeviceOptions(v){
+  var a=[['Hamilton T1','Hamilton T1 · transport standard'],['Sending facility / unknown','Sending facility / unknown'],['Other transport ventilator','Other transport ventilator']];
+  return a.map(function(x){return '<option value="'+esc(x[0])+'"'+(v===x[0]?' selected':'')+'>'+esc(x[1])+'</option>';}).join('');
+}
+function ventModeOptions(v){
+  var h=['<option value=""'+(!v?' selected':'')+'>Choose mode…</option>','<optgroup label="Hamilton T1">'];
+  HAMILTON_T1_MODES.forEach(function(x){h.push('<option value="'+esc(x)+'"'+(v===x?' selected':'')+'>'+esc(x)+'</option>');});
+  h.push('</optgroup><optgroup label="Sending facility / generic labels">');
+  GENERIC_VENT_MODES.forEach(function(x){h.push('<option value="'+esc(x)+'"'+(v===x?' selected':'')+'>'+esc(x)+'</option>');});
+  h.push('</optgroup>'); return h.join('');
+}
 
 /* ---------- Rule of Nines, age-scaled ---------- */
 /* Adult 9s; the head loses 1% per year of life after the first,
@@ -4557,7 +4581,7 @@ function ventBrief(){
   var V=CS.vent, S=ventStart(), A=abgRead(), acts=ventActions(), p=activeProtocol(), bits=[];
   bits.push('OLMD / receiving clinician vent review');
   var pt=[]; if(ageY()!=null) pt.push((PT.au==='m'?PT.age+' mo':fmt(ageY(),'')+' yr')); if(kg()!=null) pt.push(fmt(kg(),'')+' kg'); if(cm()!=null) pt.push(fmt(cm(),'')+' cm'); if(pt.length) bits.push('Patient: '+pt.join(', '));
-  bits.push('Profile: '+S.profile.toUpperCase()+(p?' | Active PCG '+p.id+' '+p.t:''));
+  bits.push('Profile: '+S.profile.toUpperCase()+' | Transport vent '+(V.device||'Hamilton T1')+(p?' | Active PCG '+p.id+' '+p.t:''));
   var vs=[]; ['mode','rr','vt','peep','fio2','pip','pplat','ie'].forEach(function(k){ if(V[k]!==''&&V[k]!=null) vs.push(k.toUpperCase()+' '+V[k]); }); if(vs.length) bits.push('Current vent: '+vs.join(' | '));
   var ab=[]; if(V.ph) ab.push('pH '+V.ph); if(V.paco2) ab.push('PaCO2 '+V.paco2); if(V.hco3) ab.push('HCO3 '+V.hco3); if(V.pao2) ab.push('PaO2 '+V.pao2); if(ab.length) bits.push('ABG: '+ab.join(' | ')+' → '+A.title);
   if(acts.length) bits.push('Proposed review: '+acts.map(function(x){return x.title;}).join('; '));
@@ -4573,12 +4597,12 @@ function viewVentABG(){
   h.push('<div class="settinggrid">');
   [['Mode',S.mode],['Rate',S.rr],['Tidal volume',S.vtml||S.vt],['PEEP',S.peep],['I:E / Ti',S.ie],['Pressure',S.plat||S.pip],['FiO₂',S.fio2]].forEach(function(x){h.push('<div class="setting"><small>'+esc(x[0])+'</small><b>'+esc(x[1]||'—')+'</b></div>');});
   h.push('</div></section>');
-  h.push('<section class="ventpanel"><h3>2 · Current ventilator</h3><div class="subline">Enter what the sending facility is actually using.</div><div class="ventfields">');
-  var vf=[['Mode','mode','text','A/C'],['RR','rr','number','/min'],['Vt','vt','number','mL'],['PEEP','peep','number','cmH₂O'],['FiO₂','fio2','number','%'],['PIP','pip','number','cmH₂O'],['pPlat','pplat','number','cmH₂O'],['I:E','ie','text','1:2']];
-  vf.forEach(function(x){h.push('<label class="cf"><span>'+x[0]+'</span><input type="'+x[2]+'" '+(x[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[3])+'"></label>');});
+  h.push('<section class="ventpanel"><h3>2 · Current ventilator</h3><div class="subline">Enter what the sending facility is actually using. Hamilton T1 is the transport reference profile; mode choices also include common sending-facility labels.</div><div class="ventprofilebar"><label class="cf"><span>Transport vent profile</span><select data-cs="vent.device">'+ventDeviceOptions(V.device||'Hamilton T1')+'</select></label><label class="cf impact"><span>Mode (as reported)</span><select data-cs="vent.mode">'+ventModeOptions(V.mode||'')+'</select></label><div class="t1note"><b>Hamilton T1 default:</b> T1 mode names are shown first. If a sending facility uses different terminology, choose the reported generic mode rather than translating it from memory.</div></div><div class="ventfields">');
+  var vf=[['RR','rr','number','/min',1],['Vt','vt','number','mL',1],['PEEP','peep','number','cmH₂O',1],['FiO₂','fio2','number','%',1],['PIP','pip','number','cmH₂O',0],['pPlat','pplat','number','cmH₂O',1],['I:E','ie','text','1:2',0]];
+  vf.forEach(function(x){h.push('<label class="cf'+(x[4]?' impact':'')+'"><span>'+x[0]+'</span><input type="'+x[2]+'" '+(x[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[3])+'"></label>');});
   h.push('</div></section>');
   h.push('<section class="ventpanel"><h3>3 · ABG / gas</h3><div class="subline">pH + PaCO₂ + HCO₃⁻ unlock acid-base compensation analysis. PaO₂ + FiO₂ add a P/F cross-check.</div><div class="ventfields">');
-  [['pH','ph','7.35'],['PaCO₂','paco2','40'],['HCO₃⁻','hco3','24'],['PaO₂','pao2','90'],['Base excess','be','0'],['Lactate','lactate','mmol/L']].forEach(function(x){h.push('<label class="cf"><span>'+x[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[2])+'"></label>');});
+  [['pH','ph','7.35',1],['PaCO₂','paco2','40',1],['HCO₃⁻','hco3','24',1],['PaO₂','pao2','90',1],['Base excess','be','0',0],['Lactate','lactate','mmol/L',0]].forEach(function(x){h.push('<label class="cf'+(x[3]?' impact':'')+'"><span>'+x[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="vent.'+x[1]+'" value="'+esc(V[x[1]])+'" placeholder="'+esc(x[2])+'"></label>');});
   h.push('</div><div class="abgstatus"><div class="abgicon">ABG</div><div><b>'+esc(A.title)+'</b><span>'+esc(A.detail)+'</span>'+A.flags.map(function(f){return '<span>• '+esc(f)+'</span>';}).join('')+'</div></div></section>');
   h.push('<section class="ventpanel full"><h3>4 · Suggested review items</h3><div class="subline">These are cross-checks for a clinician, not autonomous orders. They are generated from AIRLIFE limits + deterministic acid-base math and are intentionally conservative.</div><div class="actionstack">');
   if(!acts.length) h.push('<div class="actioncard k-air"><div class="atype">Waiting for data</div><b>Enter current settings and/or an ABG.</b><span>The deck can work from either one; both give the best comparison.</span></div>');
@@ -5234,7 +5258,7 @@ function iftReset(){
   IFT=freshIFT(); IFT._loaded=true; IFT._seeded=true;
   PT.age=PT.wt=PT.tbsa=null; PT.dx=''; PT.tags=[];
   CS.vitals={sbp:'',dbp:'',hr:'',rr:'',spo2:'',etco2:''};
-  CS.vent={profile:'auto',mode:'A/C',rr:'',vt:'',peep:'',fio2:'100',pip:'',pplat:'',ie:'',ph:'',paco2:'',hco3:'',pao2:'',be:'',lactate:''};
+  CS.vent={profile:'auto',device:'Hamilton T1',mode:'',rr:'',vt:'',peep:'',fio2:'100',pip:'',pplat:'',ie:'',ph:'',paco2:'',hco3:'',pao2:'',be:'',lactate:''};
   var a=document.getElementById('iAge'),w=document.getElementById('iWt'),d=document.getElementById('iDx');
   if(a){a.value='';a.closest('.fld').classList.remove('on');} if(w){w.value='';w.closest('.fld').classList.remove('on');} if(d)d.value='';
 }
@@ -6574,7 +6598,7 @@ function viewAbout(){
     '<li><strong>' + V24.length + ' revision notes</strong> and ' + Object.keys(EV).length + ' evidence advisories, ' +
       Object.keys(RESOLVED).length + ' of which the 2024 revision settles.</li>' +
     '<li><strong>' + CALCTABS.length + ' calculators</strong> — age-scaled Rule of Nines, dose-to-volume, bag-to-pump infusion math, gravity drip, bedside derivations, and an offline Ventilator / ABG decision-support deck.</li>' +
-    '<li><strong>Active arrest companion</strong> — transient CPR timer, rhythm confirmation, shock/epinephrine timing and ACLS/PALS/NRP protocol prompts.</li><li><strong>IFT preflight worksheet</strong> — dispatch contacts, drips with source-visible rate cross-checks, vent settings, nitric/ECMO/IABP/Impella, sheaths, touch body map and a copyable chart snapshot.</li>' +
+    '<li><strong>Active arrest companion</strong> — transient CPR timer, rhythm confirmation, shock/epinephrine timing and ACLS/PALS/NRP protocol prompts.</li><li><strong>IFT preflight worksheet</strong> — dispatch contacts, color-confirmed drips with common transfer premix shortcuts plus source-visible rate cross-checks, Hamilton T1-first vent capture, nitric/ECMO/IABP/Impella, sheaths, touch body map and a copyable chart snapshot.</li>' +
     '<li><strong>' + MCS.length + ' circulatory support pages</strong> — Impella, Cardiosave IABP and ECMO, ' +
       MCS.reduce(function(n,d){return n+d.alarms.length;},0) + ' alarms between them.</li>' +
     '<li>A <strong>retrieval-grounded assistant</strong> that answers from the loaded guideline text and cites the PCG number.</li>' +
@@ -6632,13 +6656,38 @@ function iftDrugObj(name){
   }
   return null;
 }
+var IFT_TRANSFER_MIXES = [
+  {re:/\bnorepinephrine\b|\blevophed\b/i, options:[
+    {label:'4 mg / 250 mL',amt:'4',amtU:'mg',vol:'250',volU:'mL',conc:'16 mcg/mL'},
+    {label:'8 mg / 250 mL',amt:'8',amtU:'mg',vol:'250',volU:'mL',conc:'32 mcg/mL'},
+    {label:'16 mg / 250 mL',amt:'16',amtU:'mg',vol:'250',volU:'mL',conc:'64 mcg/mL'}]},
+  {re:/\bpropofol\b|\bdiprivan\b/i, options:[
+    {label:'1000 mg / 100 mL',amt:'1000',amtU:'mg',vol:'100',volU:'mL',conc:'10 mg/mL'}]},
+  {re:/\bepinephrine\b/i, options:[
+    {label:'4 mg / 250 mL',amt:'4',amtU:'mg',vol:'250',volU:'mL',conc:'16 mcg/mL'}]}
+];
+function iftCommonMixes(name){
+  var q=String(name||''); if(!q) return [];
+  for(var i=0;i<IFT_TRANSFER_MIXES.length;i++) if(IFT_TRANSFER_MIXES[i].re.test(q)) return IFT_TRANSFER_MIXES[i].options;
+  return [];
+}
+function iftMixMatches(row,m){return String(row.amt||'')===String(m.amt)&&String(row.amtU||'')===String(m.amtU)&&String(row.vol||'')===String(m.vol)&&String(row.volU||'')===String(m.volU);}
+function iftApplyMix(row,m){if(!row||!m)return;row.amt=m.amt;row.amtU=m.amtU;row.vol=m.vol;row.volU=m.volU;}
+function iftCommonMixHTML(row,i){
+  var m=iftCommonMixes(row.drug); if(!m.length) return '';
+  var h=['<div class="iftmixquick"><div><b>Common transfer premix</b><small>One tap to populate · verify the actual bag label</small></div><div class="mixchips">'];
+  m.forEach(function(x,j){h.push('<button type="button" class="mixchip'+(iftMixMatches(row,x)?' on':'')+'" data-iftmix="'+j+'" data-idx="'+i+'">'+esc(x.label)+'<span class="mixconc">'+esc(x.conc)+'</span></button>');});
+  h.push('</div></div>'); return h.join('');
+}
 function iftDrugOptions(){
+  var extras=['Epinephrine infusion','Norepinephrine','Propofol'];
   var a=FORM.map(function(f){
     var inf=(f.a||[]).concat(f.p||[]).concat(f.ob||[]).some(function(x){return /infusion/i.test(x.r||'') || /\/(min|hr)/i.test(x.d||'');});
     return {f:f,inf:inf};
   });
   a.sort(function(x,y){return (y.inf-x.inf)||x.f.n.localeCompare(y.f.n);});
-  return a.map(function(x){return '<option value="'+esc(x.f.n)+'">';}).join('');
+  var names=extras.concat(a.map(function(x){return x.f.n;}));
+  var seen={}; return names.filter(function(n){var k=iftNorm(n);if(seen[k])return false;seen[k]=1;return true;}).map(function(n){return '<option value="'+esc(n)+'">';}).join('');
 }
 function iftActiveRx(name){
   var p=activeProtocol(), q=iftNorm(name), out=[]; if(!p||!q) return null;
@@ -6673,17 +6722,19 @@ function iftRefHTML(row){
 }
 function iftMedRow(row,i){
   var units=['mcg/min','mcg/kg/min','mg/min','mg/hr','mg/kg/hr','units/min','units/hr','units/kg/hr','mL/hr','g/hr'];
-  var h=['<div class="iftmed">','<div class="iftmedtop">'];
-  h.push('<label><span>Medication / drip</span><input list="iftDrugList" data-iftmed="drug" data-idx="'+i+'" value="'+esc(row.drug||'')+'" placeholder="Norepinephrine"></label>');
-  h.push('<label><span>Current rate</span><input type="number" inputmode="decimal" step="any" data-iftmed="rate" data-idx="'+i+'" value="'+esc(row.rate||'')+'" placeholder="—"></label>');
-  h.push('<label><span>Units</span><select data-iftmed="unit" data-idx="'+i+'">'+units.map(function(u){return '<option'+((row.unit||'')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
+  var added=!!String(row.drug||'').trim();
+  var h=['<div class="iftmed'+(added?' hasdrug':'')+'">','<div class="iftmedtop">'];
+  h.push('<label class="impact"><span>Medication / drip'+(added?'<i class="iftadded">added</i>':'')+'</span><input list="iftDrugList" data-iftmed="drug" data-idx="'+i+'" value="'+esc(row.drug||'')+'" placeholder="Norepinephrine"></label>');
+  h.push('<label class="impact"><span>Current rate</span><input type="number" inputmode="decimal" step="any" data-iftmed="rate" data-idx="'+i+'" value="'+esc(row.rate||'')+'" placeholder="—"></label>');
+  h.push('<label class="impact"><span>Units</span><select data-iftmed="unit" data-idx="'+i+'">'+units.map(function(u){return '<option'+((row.unit||'')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
   h.push('<button class="iftremove" type="button" data-iftremovemed="'+i+'" aria-label="Remove medication">×</button></div>');
+  h.push(iftCommonMixHTML(row,i));
   h.push(iftRefHTML(row));
   h.push('<details><summary style="font:700 10.5px/1 Barlow;color:var(--dim);padding:8px 2px 2px">Bag / mix + note (optional)</summary><div class="iftmix">');
-  h.push('<label><span>Drug in bag</span><input type="number" inputmode="decimal" step="any" data-iftmed="amt" data-idx="'+i+'" value="'+esc(row.amt||'')+'" placeholder="4"></label>');
-  h.push('<label><span>Amount unit</span><select data-iftmed="amtU" data-idx="'+i+'">'+['mcg','mg','g','units'].map(function(u){return '<option'+((row.amtU||'mg')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
-  h.push('<label><span>Bag volume</span><input type="number" inputmode="decimal" step="any" data-iftmed="vol" data-idx="'+i+'" value="'+esc(row.vol||'')+'" placeholder="250"></label>');
-  h.push('<label><span>Volume unit</span><select data-iftmed="volU" data-idx="'+i+'"><option'+((row.volU||'mL')==='mL'?' selected':'')+'>mL</option><option'+((row.volU||'mL')==='L'?' selected':'')+'>L</option></select></label>');
+  h.push('<label class="impact"><span>Drug in bag</span><input type="number" inputmode="decimal" step="any" data-iftmed="amt" data-idx="'+i+'" value="'+esc(row.amt||'')+'" placeholder="4"></label>');
+  h.push('<label class="impact"><span>Amount unit</span><select data-iftmed="amtU" data-idx="'+i+'">'+['mcg','mg','g','units'].map(function(u){return '<option'+((row.amtU||'mg')===u?' selected':'')+'>'+u+'</option>';}).join('')+'</select></label>');
+  h.push('<label class="impact"><span>Bag volume</span><input type="number" inputmode="decimal" step="any" data-iftmed="vol" data-idx="'+i+'" value="'+esc(row.vol||'')+'" placeholder="250"></label>');
+  h.push('<label class="impact"><span>Volume unit</span><select data-iftmed="volU" data-idx="'+i+'"><option'+((row.volU||'mL')==='mL'?' selected':'')+'>mL</option><option'+((row.volU||'mL')==='L'?' selected':'')+'>L</option></select></label>');
   h.push('<label><span>Line / note</span><input data-iftmed="note" data-idx="'+i+'" value="'+esc(row.note||'')+'" placeholder="central line / titration goal"></label>');
   h.push('</div></details></div>');
   return h.join('');
@@ -6716,7 +6767,7 @@ function iftBodySVG(){
   h.push('</svg>'); return h.join('');
 }
 function iftVentHasData(){
-  var V=CS.vent; return !!IFT.ventUsed || !!(V.rr||V.vt||V.peep||V.pip||V.pplat||V.ie||V.ph||V.paco2||V.hco3||V.pao2||V.be||V.lactate) || (V.mode && V.mode!=='A/C') || (V.fio2 && String(V.fio2)!=='100');
+  var V=CS.vent; return !!IFT.ventUsed || !!(V.mode||V.rr||V.vt||V.peep||V.pip||V.pplat||V.ie||V.ph||V.paco2||V.hco3||V.pao2||V.be||V.lactate) || (V.fio2 && String(V.fio2)!=='100');
 }
 function iftVentValue(k){ return iftVentHasData() ? (CS.vent[k]||'') : ''; }
 function iftBrief(){
@@ -6726,7 +6777,7 @@ function iftBrief(){
   var pt=[]; if(x.age) pt.push(x.age+' '+(x.ageU==='m'?'mo':'yr')); if(x.wt) pt.push(x.wt+' '+x.wtU); if(x.dx) pt.push('Dx '+x.dx); if(pt.length) lines.push('Patient: '+pt.join(' | '));
   if(x.labs) lines.push('Key sending labs: '+x.labs);
   var meds=x.meds.filter(function(m){return m.drug||m.rate;}); if(meds.length){ lines.push('Drips / meds:'); meds.forEach(function(m){var z='- '+(m.drug||'Medication')+(m.rate?' '+m.rate+' '+m.unit:''); if(m.amt&&m.vol) z+=' | bag '+m.amt+' '+m.amtU+' in '+m.vol+' '+m.volU; if(m.note)z+=' | '+m.note; lines.push(z);}); }
-  var vv=[]; if(iftVentHasData()) [['Mode','mode'],['RR','rr'],['Vt','vt'],['PEEP','peep'],['FiO2','fio2'],['PIP','pip'],['pPlat','pplat'],['I:E','ie']].forEach(function(a){if(V[a[1]])vv.push(a[0]+' '+V[a[1]]);}); if(vv.length) lines.push('Vent: '+vv.join(' | '));
+  var vv=[]; if(iftVentHasData()) [['Mode','mode'],['RR','rr'],['Vt','vt'],['PEEP','peep'],['FiO2','fio2'],['PIP','pip'],['pPlat','pplat'],['I:E','ie']].forEach(function(a){if(V[a[1]])vv.push(a[0]+' '+V[a[1]]);}); if(vv.length) lines.push('Vent: '+(V.device?('transport profile '+V.device+' | '):'')+vv.join(' | '));
   var gas=[]; [['pH','ph'],['PaCO2','paco2'],['HCO3','hco3'],['PaO2','pao2'],['BE','be'],['Lactate','lactate']].forEach(function(a){if(V[a[1]])gas.push(a[0]+' '+V[a[1]]);}); if(CS.vitals.spo2)gas.push('SpO2 '+CS.vitals.spo2+'%'); if(CS.vitals.etco2)gas.push('ETCO2 '+CS.vitals.etco2); if(gas.length) lines.push('Gas / respiratory: '+gas.join(' | '));
   if(S.ino) lines.push('iNO: '+(S.inoPpm||'—')+' ppm'+(S.inoSystem?' | '+S.inoSystem:''));
   if(S.ecmo) lines.push('ECMO: '+S.ecmoType+(S.ecmoFlow?' | flow '+S.ecmoFlow+' L/min':'')+(S.ecmoRpm?' | '+S.ecmoRpm+' RPM':'')+(S.ecmoSweep?' | sweep '+S.ecmoSweep+' L/min':'')+(S.ecmoFio2?' | FiO2 '+S.ecmoFio2+'%':'')+(S.ecmoAccess?' | access '+S.ecmoAccess:'')+(S.ecmoReturn?' | return '+S.ecmoReturn:''));
@@ -6760,21 +6811,21 @@ function viewIFT(){
   iftLoadDraft(); iftSeedPatient();
   var x=IFT,S=x.support,V=CS.vent,start=ventStart(),h=[];
   h.push('<datalist id="iftDrugList">'+iftDrugOptions()+'</datalist>');
-  h.push('<section class="ifthero"><div class="ey">Dispatch / interfacility transport</div><h1>Potential IFT patient → bedside → receiving bed.</h1><p>Start with what dispatch gives you, then add only what matters at bedside: contacts, patient context, active drips, ventilator + gas, support devices, sheaths and skin/injury findings. The same entries build a chart-ready snapshot. No patient name or MRN field is required.</p><div class="iftbar"><button class="cbtn go" type="button" data-iftcopy>Copy chart snapshot</button><button class="cbtn" type="button" data-iftsave>Save this draft</button><button class="cbtn" type="button" data-iftclear>Clear IFT patient</button>'+(x.savedAt?'<span class="saved">saved this session · '+esc(x.savedAt)+'</span>':'')+'</div></section>');
+  h.push('<section class="ifthero"><div class="ey">Dispatch / interfacility transport</div><h1>Potential IFT patient → bedside → receiving bed.</h1><p>Start with what dispatch gives you, then add only what matters at bedside: contacts, patient context, active drips, ventilator + gas, support devices, sheaths and skin/injury findings. The same entries build a chart-ready snapshot. No patient name or MRN field is required.</p><div class="iftlegend"><span class="impactkey"><i></i> CALC fields</span><span>Colored fields change patient-specific dose, protocol ranking, vent/ABG interpretation or suggested review. Plain fields are documentation-only and can be skipped when they do not matter.</span></div><div class="iftbar"><button class="cbtn go" type="button" data-iftcopy>Copy chart snapshot</button><button class="cbtn" type="button" data-iftsave>Save this draft</button><button class="cbtn" type="button" data-iftclear>Clear IFT patient</button>'+(x.savedAt?'<span class="saved">saved this session · '+esc(x.savedAt)+'</span>':'')+'</div></section>');
   h.push('<div class="iftlayout">');
   h.push('<section class="iftpanel full"><h2>1 · Dispatch essentials</h2><div class="subline">Enough to launch, call back and let the rest of the app calculate for the same patient.</div><div class="iftfields">');
   [['Sending facility','sending.facility','hospital'],['Unit / room','sending.unit','ICU / ED'],['Callback phone','sending.phone','phone'],['Contact / RN','sending.contact','name / role'],['Sending physician','sending.physician','MD'],['Receiving facility','receiving.facility','facility'],['Receiving unit','receiving.unit','ICU / cath lab'],['Receiving phone','receiving.phone','phone'],['Accepting physician','receiving.physician','MD']].forEach(function(a){h.push('<label class="cf"><span>'+a[0]+'</span><input data-ift="'+a[1]+'" value="'+esc(iftGet(a[1]))+'" placeholder="'+a[2]+'"></label>');});
-  h.push('</div><div class="iftfields three"><label class="cf"><span>Diagnosis / reason for transfer</span><input data-ift="dx" value="'+esc(x.dx)+'" placeholder="shock, STEMI, ARDS, post-op..."></label><label class="cf"><span>Age</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="age" value="'+esc(x.age)+'" placeholder="—"><select data-ift="ageU"><option value="y"'+(x.ageU==='y'?' selected':'')+'>yr</option><option value="m"'+(x.ageU==='m'?' selected':'')+'>mo</option></select></div></label><label class="cf"><span>Weight</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="wt" value="'+esc(x.wt)+'" placeholder="—"><select data-ift="wtU"><option value="kg"'+(x.wtU==='kg'?' selected':'')+'>kg</option><option value="lb"'+(x.wtU==='lb'?' selected':'')+'>lb</option></select></div></label></div><label class="cf" style="display:block;margin-top:8px"><span>Other key sending-facility labs (optional)</span><input style="width:100%" data-ift="labs" value="'+esc(x.labs||'')+'" placeholder="Hgb 7.2, K 6.1, Cr 2.4 — only what changes transport"></label></section>');
+  h.push('</div><div class="iftfields three"><label class="cf impact'+(!x.dx?' missing':'')+'"><span>Diagnosis / reason for transfer</span><input data-ift="dx" value="'+esc(x.dx)+'" placeholder="shock, STEMI, ARDS, post-op..."></label><label class="cf impact'+(!x.age?' missing':'')+'"><span>Age</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="age" value="'+esc(x.age)+'" placeholder="—"><select data-ift="ageU"><option value="y"'+(x.ageU==='y'?' selected':'')+'>yr</option><option value="m"'+(x.ageU==='m'?' selected':'')+'>mo</option></select></div></label><label class="cf impact'+(!x.wt?' missing':'')+'"><span>Weight</span><div class="cin"><input type="number" inputmode="decimal" step="any" data-ift="wt" value="'+esc(x.wt)+'" placeholder="—"><select data-ift="wtU"><option value="kg"'+(x.wtU==='kg'?' selected':'')+'>kg</option><option value="lb"'+(x.wtU==='lb'?' selected':'')+'>lb</option></select></div></label></div><label class="cf" style="display:block;margin-top:8px"><span>Other key sending-facility labs (optional)</span><input style="width:100%" data-ift="labs" value="'+esc(x.labs||'')+'" placeholder="Hgb 7.2, K 6.1, Cr 2.4 — only what changes transport"></label></section>');
 
-  h.push('<section class="iftpanel full"><div class="iftsectionhead"><div><h2>2 · Drips / medications</h2><div class="subline">Enter the sending-facility order exactly as reported. AIRLIFE active-PCG / formulary rates appear directly underneath for comparison.</div></div><button class="cbtn go" type="button" data-iftaddmed>+ Add drip</button></div>');
+  h.push('<section class="iftpanel full"><div class="iftsectionhead"><div><h2>2 · Drips / medications</h2><div class="subline">Enter the sending-facility order exactly as reported. Common transfer premix shortcuts populate the bag fields; AIRLIFE active-PCG / formulary rates remain a separate dose/rate cross-check underneath.</div></div><button class="cbtn go" type="button" data-iftaddmed>+ Add drip</button></div>');
   x.meds.forEach(function(m,i){h.push(iftMedRow(m,i));}); h.push('</section>');
 
   h.push('<section class="iftpanel full"><div class="iftsectionhead"><div><h2>3 · Ventilator / gas troubleshooting</h2><div class="subline">Enter what the sending facility is actually using. Age + weight establish the comparison envelope; current pressures and gas values drive the troubleshooting review.</div></div><a class="cbtn go" href="#calc/vent">Full Vent / ABG</a></div><div class="iftstart">');
   [['Mode',start.mode],['Rate',start.rr],['Vt',start.vtml||start.vt],['PEEP',start.peep],['I:E / Ti',start.ie],['Pressure',start.plat||start.pip]].forEach(function(z){h.push('<div class="setting"><small>'+z[0]+'</small><b>'+esc(z[1]||'—')+'</b></div>');});
-  h.push('</div><div class="iftrespgrid"><div class="iftrespbox"><h3>Current ventilator</h3><div class="subline">Settings and pressures from the sending ventilator.</div><div class="iftfields two">');
-  [['Mode','mode','text','A/C'],['RR','rr','number','/min'],['Vt','vt','number','mL'],['PEEP','peep','number','cmH2O'],['FiO2','fio2','number','%'],['PIP','pip','number','cmH2O'],['pPlat','pplat','number','cmH2O'],['I:E','ie','text','1:2']].forEach(function(a){h.push('<label class="cf"><span>'+a[0]+'</span><input type="'+a[2]+'" '+(a[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+a[1]+'" value="'+esc(iftVentValue(a[1]))+'" placeholder="'+esc(a[3])+'"></label>');});
-  h.push('</div></div><div class="iftrespbox"><h3>ABG / respiratory data</h3><div class="subline">One gas is enough to analyze; add pressures/settings when available.</div><div class="iftfields two">');
-  [['pH','vent.ph','7.35'],['PaCO₂','vent.paco2','40'],['HCO₃⁻','vent.hco3','24'],['PaO₂','vent.pao2','90'],['Base excess','vent.be','0'],['Lactate','vent.lactate','mmol/L'],['SpO₂','vitals.spo2','%'],['ETCO₂','vitals.etco2','mmHg']].forEach(function(a){var parts=a[1].split('.'),val=(parts[0]==='vent'?CS.vent[parts[1]]:CS.vitals[parts[1]])||'';h.push('<label class="cf"><span>'+a[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="'+a[1]+'" value="'+esc(val)+'" placeholder="'+esc(a[2])+'"></label>');});
+  h.push('</div><div class="iftrespgrid"><div class="iftrespbox"><h3>Current ventilator</h3><div class="subline">Settings and pressures from the sending ventilator. Hamilton T1 is the transport reference profile.</div><div class="ventprofilebar"><label class="cf"><span>Transport vent profile</span><select data-cs="vent.device">'+ventDeviceOptions(V.device||'Hamilton T1')+'</select></label><label class="cf impact"><span>Mode (as reported)</span><select data-cs="vent.mode">'+ventModeOptions(iftVentValue('mode'))+'</select></label><div class="t1note"><b>Hamilton T1:</b> APVcmv/(S)CMV+, APVsimv/SIMV+, PCV+, PSIMV+, DuoPAP, APRV, SPONT, ASV and noninvasive modes are available in the dropdown; optional modes depend on device configuration.</div></div><div class="iftfields two">');
+  [['RR','rr','number','/min',1],['Vt','vt','number','mL',1],['PEEP','peep','number','cmH2O',1],['FiO2','fio2','number','%',1],['PIP','pip','number','cmH2O',0],['pPlat','pplat','number','cmH2O',1],['I:E','ie','text','1:2',0]].forEach(function(a){h.push('<label class="cf'+(a[4]?' impact':'')+'"><span>'+a[0]+'</span><input type="'+a[2]+'" '+(a[2]==='number'?'inputmode="decimal" step="any" ':'')+'data-cs="vent.'+a[1]+'" value="'+esc(iftVentValue(a[1]))+'" placeholder="'+esc(a[3])+'"></label>');});
+  h.push('</div></div><div class="iftrespbox"><h3>ABG / respiratory data</h3><div class="subline">One gas is enough to analyze; teal CALC fields directly change the interpretation or suggested review.</div><div class="iftfields two">');
+  [['pH','vent.ph','7.35',1],['PaCO₂','vent.paco2','40',1],['HCO₃⁻','vent.hco3','24',1],['PaO₂','vent.pao2','90',1],['Base excess','vent.be','0',0],['Lactate','vent.lactate','mmol/L',0],['SpO₂','vitals.spo2','%',1],['ETCO₂','vitals.etco2','mmHg',0]].forEach(function(a){var parts=a[1].split('.'),val=(parts[0]==='vent'?CS.vent[parts[1]]:CS.vitals[parts[1]])||'';h.push('<label class="cf'+(a[3]?' impact':'')+'"><span>'+a[0]+'</span><input type="number" inputmode="decimal" step="any" data-cs="'+a[1]+'" value="'+esc(val)+'" placeholder="'+esc(a[2])+'"></label>');});
   h.push('</div></div></div>'+iftVentReviewHTML()+'<div class="iftlaunch"><a class="cbtn go" href="#calc/vent">Open full troubleshooter + approval brief</a><small>Entries carry forward automatically. The full page compares current settings with the AIRLIFE starting envelope and shows suggested review items without auto-ordering a change.</small></div></section>');
 
 
@@ -6916,6 +6967,8 @@ document.addEventListener('click', function(e){
   var t = e.target;
 
   if(t.closest && t.closest('[data-iftaddmed]')){ IFT.meds.push({drug:'',rate:'',unit:'mcg/min',amt:'',amtU:'mg',vol:'',volU:'mL',note:''}); repaint(); return; }
+  var imx=t.closest && t.closest('[data-iftmix]');
+  if(imx){ var mi=parseInt(imx.getAttribute('data-idx'),10), mj=parseInt(imx.getAttribute('data-iftmix'),10); if(!isNaN(mi)&&!isNaN(mj)&&IFT.meds[mi]){var mm=iftCommonMixes(IFT.meds[mi].drug)[mj];if(mm){iftApplyMix(IFT.meds[mi],mm);repaint();}} return; }
   var irm=t.closest && t.closest('[data-iftremovemed]');
   if(irm){ var ii=parseInt(irm.getAttribute('data-iftremovemed'),10); if(!isNaN(ii)){IFT.meds.splice(ii,1); if(!IFT.meds.length) IFT.meds.push({drug:'',rate:'',unit:'mcg/min',amt:'',amtU:'mg',vol:'',volU:'mL',note:''}); repaint();} return; }
   var itg=t.closest && t.closest('[data-ifttoggle]');
@@ -7090,7 +7143,7 @@ document.addEventListener('change', function(e){
 });
 document.addEventListener('input', function(e){
   var im=e.target.getAttribute&&e.target.getAttribute('data-iftmed');
-  if(im){var ix=parseInt(e.target.getAttribute('data-idx'),10);if(!isNaN(ix)&&IFT.meds[ix]){IFT.meds[ix][im]=e.target.value;iftRefreshPreview();}return;}
+  if(im){var ix=parseInt(e.target.getAttribute('data-idx'),10);if(!isNaN(ix)&&IFT.meds[ix]){IFT.meds[ix][im]=e.target.value;if(im==='drug'){var card=e.target.closest('.iftmed');if(card)card.classList.toggle('hasdrug',!!String(e.target.value||'').trim());}iftRefreshPreview();}return;}
   var ip=e.target.getAttribute&&e.target.getAttribute('data-ift');
   if(ip && (e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')){iftSet(ip,e.target.value); if(ip==='age'||ip==='wt'||ip==='dx'){iftSyncPatient(); var mm=document.getElementById('ptmeta');if(mm)mm.innerHTML=metaHTML();} iftRefreshPreview(); return;}
   var ck = e.target.getAttribute && e.target.getAttribute('data-cs');
@@ -7170,16 +7223,48 @@ render();
   toast.addEventListener('click', function(){ location.reload(); });
   if('serviceWorker' in navigator){
     window.addEventListener('load', function(){
-      navigator.serviceWorker.register('sw.js').then(function(reg){
-        if(reg.waiting) toast.classList.add('on');
+      /* Cache-safe updater: never let the browser's HTTP cache hide a new SW build. */
+      navigator.serviceWorker.register('sw.js?v=10.1-cachefix-20260920', {updateViaCache:'none'}).then(function(reg){
+        reg.update().catch(function(){});
+
+        function activateWaiting(){
+          if(reg.waiting){
+            reg.waiting.postMessage('skipWaiting');
+            toast.classList.add('on');
+          }
+        }
+        activateWaiting();
+
         reg.addEventListener('updatefound', function(){
           var w = reg.installing; if(!w) return;
           w.addEventListener('statechange', function(){
-            if(w.state === 'installed' && navigator.serviceWorker.controller) toast.classList.add('on');
+            if(w.state === 'installed' && navigator.serviceWorker.controller){
+              activateWaiting();
+              toast.classList.add('on');
+            }
           });
+        });
+
+        var reloading = false;
+        navigator.serviceWorker.addEventListener('controllerchange', function(){
+          if(reloading) return;
+          reloading = true;
+          location.reload();
         });
       }).catch(function(){});
     });
+  }
+
+  /* One-time recovery URL for a device stuck on an old installed PWA build.
+     Open ?resetcache=1; it clears this site's SW/cache and reloads cleanly. */
+  if(new URLSearchParams(location.search).get('resetcache') === '1' && 'serviceWorker' in navigator){
+    Promise.all([
+      navigator.serviceWorker.getRegistrations().then(function(rs){ return Promise.all(rs.map(function(r){ return r.unregister(); })); }),
+      (window.caches ? caches.keys().then(function(keys){ return Promise.all(keys.map(function(k){ return caches.delete(k); })); }) : Promise.resolve())
+    ]).then(function(){
+      var u = new URL(location.href); u.searchParams.delete('resetcache');
+      location.replace(u.pathname + u.search + u.hash);
+    }).catch(function(){});
   }
 })();
 
